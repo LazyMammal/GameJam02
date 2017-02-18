@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -495,6 +495,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2ffffd7f696d4d7ea09285aa5d2480e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &795324249 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1863915626491258, guid: 2ea6974eba09f264c83750bffa8c1273,
+    type: 2}
+  m_PrefabInternal: {fileID: 503738797}
 --- !u!1001 &907299771
 Prefab:
   m_ObjectHideFlags: 0
@@ -554,6 +559,16 @@ Prefab:
       propertyPath: battleScoreCanvas
       value: 
       objectReference: {fileID: 538349671}
+    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+        type: 2}
+      propertyPath: player1CastleSpawn
+      value: 
+      objectReference: {fileID: 795324249}
+    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+        type: 2}
+      propertyPath: player2CastleSpawn
+      value: 
+      objectReference: {fileID: 1378952089}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c2d9aea5c2e491da0ab468328f3988, type: 2}
   m_IsPrefabParent: 0
@@ -644,6 +659,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1391869809938306, guid: dcb2370ffde5f48e0820759ce95625c9,
     type: 2}
   m_PrefabInternal: {fileID: 1689037566}
+--- !u!1 &1378952089 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1863915626491258, guid: 2ea6974eba09f264c83750bffa8c1273,
+    type: 2}
+  m_PrefabInternal: {fileID: 1148155124}
 --- !u!1001 &1689037566
 Prefab:
   m_ObjectHideFlags: 0
@@ -741,29 +761,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223645638708747698, guid: dcb2370ffde5f48e0820759ce95625c9,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114215487249632742, guid: dcb2370ffde5f48e0820759ce95625c9,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114227213018544202, guid: dcb2370ffde5f48e0820759ce95625c9,
-        type: 2}
-      propertyPath: m_IgnoreReversedGraphics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114227213018544202, guid: dcb2370ffde5f48e0820759ce95625c9,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1391869809938306, guid: dcb2370ffde5f48e0820759ce95625c9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcb2370ffde5f48e0820759ce95625c9, type: 2}
@@ -865,18 +865,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114774921425476470, guid: 667f6ec4fa518404695af467021a33d9,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Which Side Will Win ?
-
-        Get it right and win 1000 Coins
-
-        Or lose and get 1 Coin'
-      objectReference: {fileID: 0}
     - target: {fileID: 1886615431211202, guid: 667f6ec4fa518404695af467021a33d9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 667f6ec4fa518404695af467021a33d9, type: 2}
