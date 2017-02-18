@@ -48,9 +48,6 @@ public class CameraZoom : MonoBehaviour
 		// world space distance
         var distance = Vector3.Distance(transform.position, target.position);
 
-		// world space frustrum height at that distance
-        var Fheight = FrustumHeightAtDistance(distance);
-
 		// get desired distance based on target width
         var moveDistance = DistanceForHeightAndFOV(targetWidth / cam.aspect);
 		var movePosition = (transform.position - target.position) * moveDistance / distance;
