@@ -54,6 +54,6 @@ public class CameraZoom : MonoBehaviour
 
 		// smoothly move to look at target from new position
         transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, smoothTime);
-		transform.LookAt(target);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), Time.deltaTime / smoothTime);
     }
 }
