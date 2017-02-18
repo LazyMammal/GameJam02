@@ -86,7 +86,7 @@ public class CameraZoom : MonoBehaviour
 
         // adjust movePosition based on Spin target
         var turnMag = Mathf.Abs(curDirection - targetDirection);
-        if (turnMag > 0.5f || spinTimer > Time.time)
+        if (turnMag > 1.5f || spinTimer > Time.time)
             movePosition += moveVector; // * turnMag;
 
         // smoothly move to look at target from new position
