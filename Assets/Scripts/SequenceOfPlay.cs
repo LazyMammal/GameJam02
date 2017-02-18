@@ -26,6 +26,20 @@ public class SequenceOfPlay : MonoBehaviour {
 		costToSwap += 10;
 	}
 
+	void UpdateTextInPanel(GameObject playerBiddingPanel, string name, string value) {
+		foreach ( Text child in playerBiddingPanel.GetComponentsInChildren<Text>() ) {
+			if ( child.name == name ) {
+				child.text = value;
+			}
+		}
+	}
+
+	public void UpdatePlayCoins() {
+		UpdateTextInPanel (player1BiddingPanel, "CoinsDisplay", "" + player1Coins);
+		UpdateTextInPanel (player2BiddingPanel, "CoinsDisplay", "" + player2Coins);
+	}
+
+
 	public void SwapPlayerCastles() {
 		GameObject temp = player1CastleSpawn;
 		player1CastleSpawn = player2CastleSpawn;
@@ -95,6 +109,7 @@ public class SequenceOfPlay : MonoBehaviour {
 			battleScoreCanvas.SetActive (false);
 
 		SetLauncherSpawn ( true );
+		UpdatePlayCoins ();
 		NextState ();
 	}
 
