@@ -8,12 +8,10 @@ public class CastleSpawnUtilities : MonoBehaviour {
 	public Material NewFlagMaterial;
 	public Material NewLauncherMaterial;
 
-	public void Spawn() {
 
+	public void Spawn() {
 		foreach (CommandInterface script in gameObject.GetComponents<CommandInterface>()) {
-			if (script != this) {
-				script.DoCommand ();
-			}
+			script.DoCommand ();
 		}
 
 		ChangeMaterial (NewFlagMaterial, "CastleFlag");
