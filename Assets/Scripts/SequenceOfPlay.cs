@@ -76,6 +76,7 @@ public class SequenceOfPlay : MonoBehaviour {
 
 	void BattleFieldFlyOver() {
 		Debug.Log ("BattleFieldFlyOver");
+		Camera.main.GetComponent<CameraZoom>().DoSpin();		
 	}
 
 	void Bidding() {

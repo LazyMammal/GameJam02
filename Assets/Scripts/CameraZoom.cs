@@ -5,7 +5,7 @@ public class CameraZoom : MonoBehaviour
     // for Dolly zoom
     public Transform target;
     private Camera cam;
-	private float targetWidth;
+    private float targetWidth;
 
     // for Spin command
     public float turnAngle = 180f;
@@ -40,42 +40,52 @@ public class CameraZoom : MonoBehaviour
 
     void Start()
     {
-		// get camera
+        // get camera
         cam = gameObject.GetComponent<Camera>(); ;
 
-		// get horizontal size of target
-		var sz = target.GetComponentInChildren<Renderer>().bounds.size;
-		targetWidth = Mathf.Max( sz.x, sz.z );
+        // get horizontal size of target
+        var sz = target.GetComponentInChildren<Renderer>().bounds.size;
+        targetWidth = Mathf.Max(sz.x, sz.z);
 
         // get current direction to target
         targetDirection = Quaternion.LookRotation(target.position - transform.position).eulerAngles.y;
     }
 
+    public void DoSpin(float angle = 0f, float speed = 0f)
+    {
+        // use defaults if not provided as parameters
+        if (angle == 0f) angle = turnAngle;
+        if (speed != 0f) turnSpeed = speed;
+
+        targetDirection += angle;
+        targetDirection %= 360;
+    }
+
     private Vector3 velocity = Vector3.zero;
     void Update()
     {
-		// world space distance
+        // world space distance
         var distance = Vector3.Distance(transform.position, target.position);
         var targetVec = target.position - transform.position;
 
-		// get desired distance based on target width
+        // get desired distance based on target width
         var moveDistance = DistanceForHeightAndFOV(targetWidth / cam.aspect);
-		var movePosition = -targetVec * moveDistance / distance;
+        var movePosition = -targetVec * moveDistance / distance;
 
         // get current LookAt direction to target
         var lookRot = Quaternion.LookRotation(target.position - transform.position);
         var curDirection = lookRot.eulerAngles.y;
 
         // get tangent to LookAt for Spin movement
-        var moveVector = Vector3.Cross( targetVec, Vector3.up );
+        var moveVector = Vector3.Cross(targetVec, Vector3.up);
         moveVector.Normalize();
 
         // adjust movePosition based on Spin target
-        var turnMag = Mathf.Abs( curDirection - targetDirection );
-        if( turnMag > 0.5f )
+        var turnMag = Mathf.Abs(curDirection - targetDirection);
+        if (turnMag > 0.5f)
             movePosition += moveVector; // * turnMag;
 
-		// smoothly move to look at target from new position
+        // smoothly move to look at target from new position
         transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, 1f / turnSpeed);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetVec), Time.deltaTime * turnSpeed);
     }
