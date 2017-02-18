@@ -2,10 +2,16 @@
 
 public class CameraZoom : MonoBehaviour
 {
+    // for Dolly zoom
     public Transform target;
     private Camera cam;
 	private float targetWidth;
-	public float smoothTime = 0.3F;
+
+    // for Spin command
+    public float turnAngle = 180f;
+    public float turnSpeed = 1f;
+    private float targetDirection = 0f;
+
 
     float FrustumHeightAtDistance(float distance)
     {
@@ -40,6 +46,9 @@ public class CameraZoom : MonoBehaviour
 		// get horizontal size of target
 		var sz = target.GetComponentInChildren<Renderer>().bounds.size;
 		targetWidth = Mathf.Max( sz.x, sz.z );
+
+        // get current direction to target
+        targetDirection = Quaternion.LookRotation(target.position - transform.position).eulerAngles.y;
     }
 
     private Vector3 velocity = Vector3.zero;
@@ -52,8 +61,14 @@ public class CameraZoom : MonoBehaviour
         var moveDistance = DistanceForHeightAndFOV(targetWidth / cam.aspect);
 		var movePosition = (transform.position - target.position) * moveDistance / distance;
 
+        // get current LookAt direction to target
+        var curDirection = Quaternion.LookRotation(target.position - transform.position).eulerAngles.y;
+
+        // adjust movePosition based on Spin target
+        
+
 		// smoothly move to look at target from new position
-        transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, smoothTime);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), Time.deltaTime / smoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, 1f / turnSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), Time.deltaTime * turnSpeed);
     }
 }
