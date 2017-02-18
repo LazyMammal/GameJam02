@@ -374,26 +374,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114069625433122466, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
+    - target: {fileID: 114270217304426406, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
         type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114069625433122466, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114069625433122466, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114069625433122466, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 0.516
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 935591495}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2ffffd7f696d4d7ea09285aa5d2480e, type: 2}
   m_IsPrefabParent: 0
@@ -454,6 +439,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c2d9aea5c2e491da0ab468328f3988, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &935591495 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+    type: 2}
+  m_PrefabInternal: {fileID: 907299771}
+  m_Script: {fileID: 11500000, guid: 5eb4bbec95ff441c7a74b931833a9dfc, type: 3}
 --- !u!1001 &1148155124
 Prefab:
   m_ObjectHideFlags: 0
@@ -764,6 +755,10 @@ Prefab:
         Get it right and win 1000 Coins
 
         Or lose and get 1 Coin'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886615431211202, guid: 667f6ec4fa518404695af467021a33d9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 667f6ec4fa518404695af467021a33d9, type: 2}

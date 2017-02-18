@@ -37,7 +37,7 @@ public class SequenceOfPlay : MonoBehaviour {
 			sequenceDisplayText.GetComponent<Text> ().text = stateText;
 			Invoke (stateText, 0f);
 		}
-		Invoke ("NextState", 3f);  // TODO CHANGE THIS
+		//Invoke ("NextState", 3f);  // TODO CHANGE THIS
 	}
 
 
