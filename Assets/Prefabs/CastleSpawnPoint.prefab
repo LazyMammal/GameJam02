@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 114309577240600456}
   m_Layer: 0
   m_Name: CastleSpawnPoint
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 1415295568338032, guid: 23d8ec7e0ec53da45aea73dc7cf4efd4, type: 2}
   randomizeRotation: 0
+  nestItem: 1
 --- !u!136 &136364860022713720
 CapsuleCollider:
   m_ObjectHideFlags: 1
