@@ -374,6 +374,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114069625433122466, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114069625433122466, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114069625433122466, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114069625433122466, guid: a2ffffd7f696d4d7ea09285aa5d2480e,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.516
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2ffffd7f696d4d7ea09285aa5d2480e, type: 2}
   m_IsPrefabParent: 0
@@ -416,37 +436,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+        type: 2}
+      propertyPath: sequenceDisplayText
+      value: 
+      objectReference: {fileID: 227797231}
+    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+        type: 2}
+      propertyPath: titleScreenCanvas
+      value: 
+      objectReference: {fileID: 1865837863}
+    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+        type: 2}
+      propertyPath: biddingCanvas
+      value: 
+      objectReference: {fileID: 1297379524}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c2d9aea5c2e491da0ab468328f3988, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &935591493 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1943160460939228, guid: a3c2d9aea5c2e491da0ab468328f3988,
-    type: 2}
-  m_PrefabInternal: {fileID: 907299771}
---- !u!114 &935591495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935591493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb4bbec95ff441c7a74b931833a9dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sequenceDisplayText: {fileID: 227797231}
-  titleScreenCanvas: {fileID: 1865837863}
-  biddingCanvas: {fileID: 1297379524}
-  sequenceOfPlay:
-  - ClearBattleField
-  - TitleScreen
-  - GenerateBattleField
-  - BattleFieldFlyOver
-  - Bidding
-  - StartSimulation
-  - DistributeWin
-  state: -1
 --- !u!1001 &1148155124
 Prefab:
   m_ObjectHideFlags: 0
@@ -647,7 +654,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1391869809938306, guid: dcb2370ffde5f48e0820759ce95625c9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcb2370ffde5f48e0820759ce95625c9, type: 2}
@@ -749,9 +756,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1886615431211202, guid: 667f6ec4fa518404695af467021a33d9, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 114774921425476470, guid: 667f6ec4fa518404695af467021a33d9,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Which Side Will Win ?
+
+        Get it right and win 1000 Coins
+
+        Or lose and get 1 Coin'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 667f6ec4fa518404695af467021a33d9, type: 2}
