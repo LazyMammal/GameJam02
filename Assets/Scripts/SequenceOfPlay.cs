@@ -15,6 +15,14 @@ public class SequenceOfPlay : MonoBehaviour {
 	public GameObject player1CastleSpawn;
 	public GameObject player2CastleSpawn;
 
+	public int player1Coins = 100;
+	public int player2Coins = 100;
+
+	public int costToSwap = 0;
+	public void increaseSwapPrice() {
+		costToSwap += 10;
+	}
+
 	public void SwapPlayerCastles() {
 		GameObject temp = player1CastleSpawn;
 		player1CastleSpawn = player2CastleSpawn;
