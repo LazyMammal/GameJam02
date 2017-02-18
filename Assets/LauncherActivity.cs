@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 
 public class LauncherActivity : MonoBehaviour {
 
@@ -13,8 +10,7 @@ public class LauncherActivity : MonoBehaviour {
 	public GameObject missile;	// the missile to shoot
 
 	private float cooldown_finished = 0f;	// time when current cooldown completes
-	private System.Random random = new System.Random(Time.time.ToString().GetHashCode());
-
+	
 	// Use this for initialization
 	void Start () {
 		if (missile == null) {
@@ -23,7 +19,7 @@ public class LauncherActivity : MonoBehaviour {
 	}
 
 	float NextRandom() {
-		return (float)( random.NextDouble () - 0.5 ) *angular_uncertainty;
+		return (float)( Random.value - 0.5 ) *angular_uncertainty;
 	}
 
 	Quaternion RandomRotation() {
