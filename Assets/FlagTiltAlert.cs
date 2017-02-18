@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlagTiltAlert : MonoBehaviour
 {
@@ -10,9 +8,13 @@ public class FlagTiltAlert : MonoBehaviour
     // Called for physics updates
     void FixedUpdate()
     {
-		// get angle from vertical
+        // get angle from vertical
 
-		
+        float dot = Vector3.Dot(transform.up, Vector3.up);
 
+        if (dot < Mathf.Cos(tiltAngle * Mathf.Deg2Rad))
+        {
+            Destroy(gameObject);
+        }
     }
 }
