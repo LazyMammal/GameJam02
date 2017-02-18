@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33273298245194978}
   - component: {fileID: 65129516606456492}
   - component: {fileID: 23045195778571606}
-  - component: {fileID: 54166755061669052}
   m_Layer: 0
   m_Name: FlagMesh
   m_TagString: Untagged
@@ -39,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4436067226454360}
   - component: {fileID: 114525947970273824}
+  - component: {fileID: 54723169497812178}
   m_Layer: 0
   m_Name: CastleFlag
   m_TagString: Untagged
@@ -111,12 +111,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1270937986458724}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54166755061669052
+--- !u!54 &54723169497812178
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1270937986458724}
+  m_GameObject: {fileID: 1415295568338032}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
