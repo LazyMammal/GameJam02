@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &114303780196120062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,7 +115,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Which Side Will Win ?
+  m_Text: 'Which Side Will Win ?
+
+    Get it right and win 100 Coins'
 --- !u!222 &222385943392891030
 CanvasRenderer:
   m_ObjectHideFlags: 1
