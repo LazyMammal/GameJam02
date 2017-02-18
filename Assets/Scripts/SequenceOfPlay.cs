@@ -15,6 +15,9 @@ public class SequenceOfPlay : MonoBehaviour {
 	public GameObject player1CastleSpawn;
 	public GameObject player2CastleSpawn;
 
+	public GameObject player1BiddingPanel;
+	public GameObject player2BiddingPanel;
+
 	public int player1Coins = 100;
 	public int player2Coins = 100;
 
