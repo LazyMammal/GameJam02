@@ -15,6 +15,7 @@ public class FlagTiltAlert : MonoBehaviour
         {
             InfoBox.PrependLine("Flag Destroyed");
             Destroy(gameObject);
+			SequenceOfPlay.singleton.UpdateFlagCount ();
         }
     }
 }

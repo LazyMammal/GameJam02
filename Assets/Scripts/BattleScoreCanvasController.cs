@@ -21,10 +21,10 @@ public class BattleScoreCanvasController : MonoBehaviour {
 		}
 	}
 
-	public void SetScore( int flagsPlayer1Lost , int flagsPlayer2Lost ) {
+	public void SetScore( int flagsPlayer1Flags , int flagsPlayer2Flags ) {
 		if (player1Score != null && player2Score != null) {
-			player1Score.text = ScoreToString( flagsPlayer1Lost - flagsPlayer2Lost );
-			player2Score.text = ScoreToString( flagsPlayer2Lost - flagsPlayer1Lost );
+			player1Score.text = ScoreToString( flagsPlayer1Flags - flagsPlayer2Flags );
+			player2Score.text = ScoreToString( flagsPlayer2Flags - flagsPlayer1Flags );
 		}
 	}
 

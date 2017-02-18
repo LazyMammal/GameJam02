@@ -10,6 +10,28 @@ public class SequenceOfPlay : MonoBehaviour {
 	public GameObject biddingCanvas;
 	public GameObject battleScoreCanvas;
 
+	public int player1FlagCount = 0;
+	public int player2FlagCount = 0;
+	public GameObject player1CastleSpawn;
+	public GameObject player2CastleSpawn;
+
+	public void SwapPlayerCastles() {
+		GameObject temp = player1CastleSpawn;
+		player1CastleSpawn = player2CastleSpawn;
+		player2CastleSpawn = temp;
+	}
+
+	int GetFlagCountForCastle( GameObject castle ) {
+		return castle.GetComponent<CastleSpawnUtilities> ().FlagCount ();
+	}
+
+	public void UpdateFlagCount() {
+		player1FlagCount = GetFlagCountForCastle (player1CastleSpawn);
+		player2FlagCount = GetFlagCountForCastle (player2CastleSpawn);
+		battleScoreCanvas.GetComponent<BattleScoreCanvasController> ().SetScore (player1FlagCount, player2FlagCount);
+	}
+			
+
 	public static SequenceOfPlay singleton;
 
 	public void Awake() {
@@ -91,6 +113,7 @@ public class SequenceOfPlay : MonoBehaviour {
 	}
 
 	void StartSimulation() {
+		UpdateFlagCount ();
 		Debug.Log ("StartSimulation");
 		if (biddingCanvas)
 			biddingCanvas.SetActive (false);

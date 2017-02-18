@@ -34,6 +34,17 @@ public class CastleSpawnUtilities : MonoBehaviour {
 				}
 			}
 		}
-	}		
+	}
+
+	public int FlagCount() {
+		int count = 0;
+		foreach (Transform childTransform in transform) {
+			GameObject child = childTransform.gameObject;
+			if (child.CompareTag ("CastleFlag")) {
+				count++;
+			}
+		}
+		return count;
+	}
 	
 }
