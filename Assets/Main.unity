@@ -239,6 +239,10 @@ Prefab:
       propertyPath: m_Name
       value: CastleSpawnPointA
       objectReference: {fileID: 0}
+    - target: {fileID: 1119847231043566, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
+      propertyPath: m_TagString
+      value: Launcher
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
   m_IsPrefabParent: 0
@@ -284,6 +288,10 @@ Prefab:
     - target: {fileID: 1863915626491258, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
       propertyPath: m_Name
       value: CastleSpawnPointB
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119847231043566, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
+      propertyPath: m_TagString
+      value: Launcher
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
