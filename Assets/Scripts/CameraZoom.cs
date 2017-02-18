@@ -6,6 +6,7 @@ public class CameraZoom : MonoBehaviour
     public Transform target;
     private Camera cam;
     private float targetWidth;
+    public float zoomScale = 1f;
 
     // for Spin command
     public float turnAngle = 360f;
@@ -73,7 +74,7 @@ public class CameraZoom : MonoBehaviour
 
         // get desired distance based on target width
         var moveDistance = DistanceForHeightAndFOV(targetWidth / cam.aspect);
-        var movePosition = -targetVec * moveDistance / distance;
+        var movePosition = -targetVec * moveDistance / distance * zoomScale;
 
         // get current LookAt direction to target
         var lookRot = Quaternion.LookRotation(target.position - transform.position);
