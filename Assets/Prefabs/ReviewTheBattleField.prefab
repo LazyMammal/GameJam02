@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114303780196120062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,7 +104,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -115,9 +115,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Which Side Will Win ?
+  m_Text: 'Who keeps the most Flags?
 
-    Get it right and win 100 Coins'
+    Get it right and win 1000 Coins
+
+    Or lose and get 1 Coin'
 --- !u!222 &222385943392891030
 CanvasRenderer:
   m_ObjectHideFlags: 1
