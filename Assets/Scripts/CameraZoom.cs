@@ -8,9 +8,10 @@ public class CameraZoom : MonoBehaviour
     private float targetWidth;
 
     // for Spin command
-    public float turnAngle = 180f;
-    public float turnSpeed = 10f;
+    public float turnAngle = 360f;
+    public float turnSpeed = 25f;
     private float targetDirection = 0f;
+    private float spinTimer = 0f;
 
 
     float FrustumHeightAtDistance(float distance)
@@ -59,6 +60,8 @@ public class CameraZoom : MonoBehaviour
 
         targetDirection += angle;
         targetDirection %= 360;
+
+        spinTimer = Time.time + Mathf.Abs(angle / turnSpeed) * Mathf.Deg2Rad;
     }
 
     private Vector3 velocity = Vector3.zero;
@@ -82,7 +85,7 @@ public class CameraZoom : MonoBehaviour
 
         // adjust movePosition based on Spin target
         var turnMag = Mathf.Abs(curDirection - targetDirection);
-        if (turnMag > 0.5f)
+        if (turnMag > 0.5f || spinTimer > Time.time)
             movePosition += moveVector; // * turnMag;
 
         // smoothly move to look at target from new position
