@@ -8,6 +8,7 @@ public class SequenceOfPlay : MonoBehaviour {
 	public GameObject sequenceDisplayText;
 	public GameObject titleScreenCanvas;
 	public GameObject biddingCanvas;
+	public GameObject battleScoreCanvas;
 
 	public static SequenceOfPlay singleton;
 
@@ -53,6 +54,8 @@ public class SequenceOfPlay : MonoBehaviour {
 			titleScreenCanvas.SetActive (false);
 		if (biddingCanvas)
 			biddingCanvas.SetActive (false);
+		if (battleScoreCanvas)
+			battleScoreCanvas.SetActive (false);
 
 		SetLauncherSpawn ( true );
 
@@ -88,7 +91,9 @@ public class SequenceOfPlay : MonoBehaviour {
 		Debug.Log ("StartSimulation");
 		if (biddingCanvas)
 			biddingCanvas.SetActive (false);
-
+		if (battleScoreCanvas)
+			battleScoreCanvas.SetActive (true);
+		
 		SetLauncherSpawn ( true );
 	}
 
@@ -99,6 +104,9 @@ public class SequenceOfPlay : MonoBehaviour {
 
 	void DistributeWin() {
 		Debug.Log ("DistributeWin");
+		if (battleScoreCanvas)
+			battleScoreCanvas.SetActive (false);
+		
 	}
 
 
