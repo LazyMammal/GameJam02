@@ -10,7 +10,7 @@ public class BattleScoreCanvasController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SetScore (1, 3);
+		SetScore ();
 	}
 
 	string ScoreToString( int score ) {
@@ -21,7 +21,10 @@ public class BattleScoreCanvasController : MonoBehaviour {
 		}
 	}
 
-	public void SetScore( int flagsPlayer1Flags , int flagsPlayer2Flags ) {
+	public void SetScore() {
+		int flagsPlayer1Flags = SequenceOfPlay.singleton.player1FlagCount;
+		int flagsPlayer2Flags = SequenceOfPlay.singleton.player2FlagCount;
+
 		if (player1Score != null && player2Score != null) {
 			player1Score.text = ScoreToString( flagsPlayer1Flags - flagsPlayer2Flags );
 			player2Score.text = ScoreToString( flagsPlayer2Flags - flagsPlayer1Flags );

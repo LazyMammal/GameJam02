@@ -25,10 +25,14 @@ public class SequenceOfPlay : MonoBehaviour {
 		return castle.GetComponent<CastleSpawnUtilities> ().FlagCount ();
 	}
 
+	public void DelayedUpdateFlagCount() {
+		Invoke ("UpdateFlagCount", 0.3f);
+	}
+
 	public void UpdateFlagCount() {
 		player1FlagCount = GetFlagCountForCastle (player1CastleSpawn);
 		player2FlagCount = GetFlagCountForCastle (player2CastleSpawn);
-		battleScoreCanvas.GetComponent<BattleScoreCanvasController> ().SetScore (player1FlagCount, player2FlagCount);
+		battleScoreCanvas.GetComponent<BattleScoreCanvasController> ().SetScore();
 	}
 			
 
@@ -104,6 +108,7 @@ public class SequenceOfPlay : MonoBehaviour {
 	}
 
 	void Bidding() {
+		UpdateFlagCount ();
 		Debug.Log ("Bidding");
 		if (titleScreenCanvas)
 			titleScreenCanvas.SetActive (false);
