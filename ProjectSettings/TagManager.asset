@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - InfoBox
   - Projectile
+  - LauncherSpawner
   layers:
   - Default
   - TransparentFX

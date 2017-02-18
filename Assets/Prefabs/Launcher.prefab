@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114621389818886046}
   m_Layer: 0
   m_Name: ProjectileSpawnPoint
-  m_TagString: Untagged
+  m_TagString: LauncherSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  active: 1
+  activate_firing: 0
   spawn_distance: 2
   angular_uncertainty: 10
   missile: {fileID: 1580494743441892, guid: 8a71c840c520d08479fbfb7ae7246cbe, type: 2}

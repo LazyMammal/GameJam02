@@ -3,7 +3,7 @@
 public class LauncherActivity : MonoBehaviour {
 
 	public float cooldown = 1f;	// time between shots
-	public bool active = true;	// can shoot or not
+	public bool activate_firing = false;	// can shoot or not
 	public float spawn_distance = 2f; // distance from center of cannon that missile spawns
 	public float angular_uncertainty = 10f; // uncertainty in degrees
 
@@ -30,7 +30,7 @@ public class LauncherActivity : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Time.time > cooldown_finished) {
+		if (activate_firing && Time.time > cooldown_finished) {
 			cooldown_finished = Time.time + cooldown;
 			Fire ();
 		}

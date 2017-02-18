@@ -26,7 +26,7 @@ public class SequenceOfPlay : MonoBehaviour {
 	}
 
 	public string[] sequenceOfPlay = new string[] { "ClearBattleField", "TitleScreen","GenerateBattleField",
-		"BattleFieldFlyOver","Bidding","StartSimulation","DistributeWin"};
+		"BattleFieldFlyOver","Bidding","StartSimulation","EndSimulation","DistributeWin"};
 
 	public int state = -1;
 	public void NextState() {
@@ -53,6 +53,8 @@ public class SequenceOfPlay : MonoBehaviour {
 			titleScreenCanvas.SetActive (false);
 		if (biddingCanvas)
 			biddingCanvas.SetActive (false);
+
+		SetLauncherSpawn ( true );
 
 	}
 
@@ -86,10 +88,13 @@ public class SequenceOfPlay : MonoBehaviour {
 		Debug.Log ("StartSimulation");
 		if (biddingCanvas)
 			biddingCanvas.SetActive (false);
+
+		SetLauncherSpawn ( true );
 	}
 
 	void EndSimulation() {
 		Debug.Log ("EndSimulation");
+		SetLauncherSpawn ( false );
 	}
 
 	void DistributeWin() {
@@ -97,4 +102,10 @@ public class SequenceOfPlay : MonoBehaviour {
 	}
 
 
+	void SetLauncherSpawn( bool value ) {
+		foreach (GameObject launcherSpawn in GameObject.FindGameObjectsWithTag("LauncherSpawner")) {
+			launcherSpawn.GetComponent<LauncherActivity> ().activate_firing = value;
+			Debug.Log ("Setting launcher ...");
+		}
+	}
 }
