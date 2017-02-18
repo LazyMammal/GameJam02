@@ -305,6 +305,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60f7b053193484076bea0460b75c1c25, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &408366775 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1776428377415374, guid: 9ab9f702537514231a1945ad837befdb,
+    type: 2}
+  m_PrefabInternal: {fileID: 843374857}
 --- !u!1001 &503738797
 Prefab:
   m_ObjectHideFlags: 0
@@ -495,6 +500,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2ffffd7f696d4d7ea09285aa5d2480e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &677650658 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1776428377415374, guid: 9ab9f702537514231a1945ad837befdb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1689037566}
 --- !u!224 &677650659 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224609937212717068, guid: 9ab9f702537514231a1945ad837befdb,
@@ -701,6 +711,16 @@ Prefab:
       propertyPath: player2CastleSpawn
       value: 
       objectReference: {fileID: 1378952089}
+    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+        type: 2}
+      propertyPath: player1BiddingPanel
+      value: 
+      objectReference: {fileID: 677650658}
+    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+        type: 2}
+      propertyPath: player2BiddingPanel
+      value: 
+      objectReference: {fileID: 408366775}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c2d9aea5c2e491da0ab468328f3988, type: 2}
   m_IsPrefabParent: 0
