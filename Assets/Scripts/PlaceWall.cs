@@ -17,9 +17,10 @@ public class PlaceWall : MonoBehaviour {
 
 	public void PlaceSingleWall(int x, int y, int z) {
 		Vector3 offset = new Vector3 (x, y, z);
-		Instantiate (wall_prefab, 
+		GameObject wall = (GameObject) Instantiate (wall_prefab, 
 			gameObject.transform.position + gameObject.transform.forward * forward_distance + offset, 
 			gameObject.transform.rotation );
+		wall.transform.SetParent(transform);
 	}
 
 	public void BuildWall() {

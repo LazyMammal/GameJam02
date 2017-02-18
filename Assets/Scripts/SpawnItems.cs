@@ -6,6 +6,7 @@ public class SpawnItems : MonoBehaviour
     public int count = 1;
     public GameObject[] prefabs;
     public bool randomizeRotation = false;
+    public bool nestItem = true;
 
     void Start()
     {
@@ -18,6 +19,10 @@ public class SpawnItems : MonoBehaviour
                 Vector3 pos3 = new Vector3(pos2.x, 0, pos2.y);
                 pos3 *= radius;
                 GameObject go = (GameObject)Instantiate(item, transform.position + pos3, rot);
+                if (nestItem)
+                {
+                    go.transform.SetParent(transform);
+                }
             }
         }
     }
