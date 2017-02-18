@@ -26,6 +26,8 @@ public class SequenceOfPlay : MonoBehaviour {
 		costToSwap += 10;
 	}
 
+	public int playerBidding = 1;
+
 	void UpdateTextInPanel(GameObject playerBiddingPanel, string name, string value) {
 		foreach ( Text child in playerBiddingPanel.GetComponentsInChildren<Text>() ) {
 			if ( child.name == name ) {
@@ -34,9 +36,34 @@ public class SequenceOfPlay : MonoBehaviour {
 		}
 	}
 
+	void SetInteractability(GameObject playerBiddingPanel, bool value) {
+		foreach ( Button child in playerBiddingPanel.GetComponentsInChildren<Button>() ) {
+			child.interactable = value;
+		}
+	}
+
+	public void GlobalSwapCastles() {
+		Debug.Log ("I'm globally swapping");
+		singleton.SwapCastles ();
+	}
+
+	public void SwapCastles() {
+		Debug.Log ("I'm locally swapping");
+		player1Coins += playerBidding == 1 ? -costToSwap : costToSwap;
+		player2Coins += playerBidding == 2 ? -costToSwap : costToSwap;
+		increaseSwapPrice ();
+		playerBidding = playerBidding == 1 ? 2 : 1;
+		UpdatePlayCoins ();
+		SetInteractability (player1BiddingPanel, playerBidding == 1 );
+		SetInteractability (player2BiddingPanel, playerBidding == 2 );
+		Camera.main.GetComponent<CameraZoom>().DoSpin(180);
+	}
+
 	public void UpdatePlayCoins() {
 		UpdateTextInPanel (player1BiddingPanel, "CoinsDisplay", "" + player1Coins);
 		UpdateTextInPanel (player2BiddingPanel, "CoinsDisplay", "" + player2Coins);
+		UpdateTextInPanel (player1BiddingPanel, "OtherCastleText", "Switch Castles\nCost : " + costToSwap);
+		UpdateTextInPanel (player2BiddingPanel, "OtherCastleText", "Switch Castles\nCost : " + costToSwap);
 	}
 
 
