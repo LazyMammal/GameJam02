@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LauncherActivity : MonoBehaviour {
 
 	public float cooldown = 1f;	// time between shots
 	public bool active = true;	// can shoot or not
 	public float spawn_distance = 2f; // distance from center of cannon that missile spawns
+	public float angular_uncertainty = 10f; // uncertainty in degrees
 
 	public GameObject missile;	// the missile to shoot
 
 	private float cooldown_finished = 0f;	// time when current cooldown completes
+	private System.Random random = new System.Random(Time.time.ToString().GetHashCode());
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +22,29 @@ public class LauncherActivity : MonoBehaviour {
 		}
 	}
 
+	float NextRandom() {
+		return (float)( random.NextDouble () - 0.5 ) *angular_uncertainty;
+	}
+
+	Quaternion RandomRotation() {
+		Quaternion rot = Quaternion.Euler ( NextRandom() , NextRandom()  , 0 );
+		return rot;
+
+	}
+
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (Time.time > cooldown_finished) {
 			cooldown_finished = Time.time + cooldown;
-			Instantiate (missile, gameObject.transform.position + gameObject.transform.forward * spawn_distance, gameObject.transform.rotation);
+			Fire ();
 		}
+	}
+
+	void Fire() {
+		Quaternion direct = gameObject.transform.rotation * RandomRotation ();
+		Instantiate (missile, 
+			gameObject.transform.position + gameObject.transform.forward * spawn_distance, 
+			direct );
+		
 	}
 }

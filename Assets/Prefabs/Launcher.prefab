@@ -35,6 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4792231600156964}
+  - component: {fileID: 114621389818886046}
   m_Layer: 0
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
@@ -236,6 +237,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114621389818886046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082028802737226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb12d4f9cdfb4e02b8a7a07ee16cd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  active: 1
+  spawn_distance: 2
+  angular_uncertainty: 10
+  missile: {fileID: 1580494743441892, guid: 8a71c840c520d08479fbfb7ae7246cbe, type: 2}
 --- !u!136 &136693817886042074
 CapsuleCollider:
   m_ObjectHideFlags: 1
