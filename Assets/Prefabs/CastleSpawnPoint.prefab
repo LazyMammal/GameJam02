@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4239779094939796}
   - component: {fileID: 114995737577517024}
+  - component: {fileID: 114309577240600456}
   m_Layer: 0
   m_Name: CastleSpawnPoint
   m_TagString: Untagged
@@ -40,6 +41,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114309577240600456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863915626491258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a87d94b4456e47edb2fa62455349a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall_prefab: {fileID: 1286029898508800, guid: 71308166eab7eb341b5ef845faa08fd5,
+    type: 2}
+  x_size: 1
+  y_size: 3
+  z_size: 10
+  forward_distance: 10
 --- !u!114 &114995737577517024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,3 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992f65b82378ad34fbedc18ad5169efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 15
+  count: 1
+  prefabs: []
+  randomizeRotation: 0
