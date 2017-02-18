@@ -9,7 +9,14 @@ public class SequenceOfPlay : MonoBehaviour {
 	public GameObject titleScreenCanvas;
 	public GameObject biddingCanvas;
 
+	public static SequenceOfPlay singleton;
 
+	public void Awake() {
+		if (singleton == null) {
+			singleton = this;
+		}
+	}
+		
 	// Use this for initialization
 	void Start () {
 		if (sequenceDisplayText == null) {
@@ -30,7 +37,7 @@ public class SequenceOfPlay : MonoBehaviour {
 			sequenceDisplayText.GetComponent<Text> ().text = stateText;
 			Invoke (stateText, 0f);
 		}
-		Invoke ("NextState", 1f);
+		Invoke ("NextState", 3f);  // TODO CHANGE THIS
 	}
 
 
