@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114995737577517024}
   - component: {fileID: 114309577240600456}
   - component: {fileID: 114922239262176020}
+  - component: {fileID: 114352003272836550}
   m_Layer: 0
   m_Name: CastleSpawnPoint
   m_TagString: SpawnPoint
@@ -59,6 +60,19 @@ MonoBehaviour:
   y_size: 3
   z_size: 10
   forward_distance: 10
+--- !u!114 &114352003272836550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863915626491258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ba99fc4d9d947c7808ce8643cc86b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewFlagMaterial: {fileID: 0}
+  NewLauncherMaterial: {fileID: 0}
 --- !u!114 &114922239262176020
 MonoBehaviour:
   m_ObjectHideFlags: 1
