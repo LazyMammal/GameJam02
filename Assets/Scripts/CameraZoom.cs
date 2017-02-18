@@ -61,7 +61,7 @@ public class CameraZoom : MonoBehaviour
         targetDirection += angle;
         targetDirection %= 360;
 
-        spinTimer = Time.time + Mathf.Abs(angle / turnSpeed) * Mathf.Deg2Rad;
+        spinTimer = Time.time + 0.5f; //Mathf.Abs(angle / turnSpeed) * Mathf.Deg2Rad;
     }
 
     private Vector3 velocity = Vector3.zero;
