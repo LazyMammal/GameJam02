@@ -9,7 +9,7 @@ public class CameraZoom : MonoBehaviour
 
     // for Spin command
     public float turnAngle = 180f;
-    public float turnSpeed = 1f;
+    public float turnSpeed = 10f;
     private float targetDirection = 0f;
 
 
@@ -56,19 +56,27 @@ public class CameraZoom : MonoBehaviour
     {
 		// world space distance
         var distance = Vector3.Distance(transform.position, target.position);
+        var targetVec = target.position - transform.position;
 
 		// get desired distance based on target width
         var moveDistance = DistanceForHeightAndFOV(targetWidth / cam.aspect);
-		var movePosition = (transform.position - target.position) * moveDistance / distance;
+		var movePosition = -targetVec * moveDistance / distance;
 
         // get current LookAt direction to target
-        var curDirection = Quaternion.LookRotation(target.position - transform.position).eulerAngles.y;
+        var lookRot = Quaternion.LookRotation(target.position - transform.position);
+        var curDirection = lookRot.eulerAngles.y;
+
+        // get tangent to LookAt for Spin movement
+        var moveVector = Vector3.Cross( targetVec, Vector3.up );
+        moveVector.Normalize();
 
         // adjust movePosition based on Spin target
-        
+        var turnMag = Mathf.Abs( curDirection - targetDirection );
+        if( turnMag > 0.5f )
+            movePosition += moveVector; // * turnMag;
 
 		// smoothly move to look at target from new position
         transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocity, 1f / turnSpeed);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), Time.deltaTime * turnSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetVec), Time.deltaTime * turnSpeed);
     }
 }

@@ -555,7 +555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2047169372}
-  smoothTime: 0.8
+  turnAngle: 180
+  turnSpeed: 10
 --- !u!4 &2047169372 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4483578789542602, guid: d47eba8c2f22b2c4b89db1f7e5557a05,
