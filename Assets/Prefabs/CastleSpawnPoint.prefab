@@ -316,7 +316,7 @@ MonoBehaviour:
   count: 5
   prefabs:
   - {fileID: 1415295568338032, guid: 23d8ec7e0ec53da45aea73dc7cf4efd4, type: 2}
-  randomizeRotation: 1
+  randomizeRotation: 0
 --- !u!136 &136364860022713720
 CapsuleCollider:
   m_ObjectHideFlags: 1
