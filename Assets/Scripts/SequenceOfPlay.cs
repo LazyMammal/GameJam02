@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class SequenceOfPlay : MonoBehaviour {
 
-	public GameObject sequenceDisplayText = null;
+	public GameObject sequenceDisplayText;
+	public GameObject titleScreenCanvas;
+	public GameObject biddingCanvas;
+
 
 	// Use this for initialization
 	void Start () {
@@ -33,14 +36,30 @@ public class SequenceOfPlay : MonoBehaviour {
 
 	void ClearBattleField() {
 		Debug.Log ("ClearBattleField");
+		foreach (GameObject item in GameObject.FindGameObjectsWithTag("SpawnPoint")) {
+			item.GetComponent<CastleSpawnUtilities> ().Despawn ();
+		}
+		foreach (GameObject item in GameObject.FindGameObjectsWithTag("Projectile")) {
+			Destroy( item );
+		}
+		if (titleScreenCanvas)
+			titleScreenCanvas.SetActive (false);
+		if (biddingCanvas)
+			biddingCanvas.SetActive (false);
+
 	}
 
 	void TitleScreen() {
 		Debug.Log ("TitleScreen");
+		if (titleScreenCanvas)
+			titleScreenCanvas.SetActive (true);
 	}
 
 	void GenerateBattleField() {
 		Debug.Log ("GenerateBattleField");
+		foreach (GameObject spawn in GameObject.FindGameObjectsWithTag("SpawnPoint")) {
+			spawn.GetComponent<CastleSpawnUtilities> ().Spawn ();
+		}
 	}
 
 	void BattleFieldFlyOver() {
@@ -49,10 +68,17 @@ public class SequenceOfPlay : MonoBehaviour {
 
 	void Bidding() {
 		Debug.Log ("Bidding");
+		if (titleScreenCanvas)
+			titleScreenCanvas.SetActive (false);
+		if (biddingCanvas)
+			biddingCanvas.SetActive (true);
+		
 	}
 
 	void StartSimulation() {
 		Debug.Log ("StartSimulation");
+		if (biddingCanvas)
+			biddingCanvas.SetActive (false);
 	}
 
 	void EndSimulation() {

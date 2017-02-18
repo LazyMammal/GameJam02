@@ -9,6 +9,7 @@ TagManager:
   - CastleFlag
   - Wall
   - InfoBox
+  - Projectile
   layers:
   - Default
   - TransparentFX

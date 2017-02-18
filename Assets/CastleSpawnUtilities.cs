@@ -8,18 +8,26 @@ public class CastleSpawnUtilities : MonoBehaviour {
 	public Material NewFlagMaterial;
 	public Material NewLauncherMaterial;
 
-	// Use this for initialization
-	void Start () {
-		Debug.Log ("This call should be used by the base constructor");
-		Invoke ("ChangeFlagColorExample", 1);		
-	}
+	public void Spawn() {
 
-	void ChangeFlagColorExample() {
+		foreach (CommandInterface script in gameObject.GetComponents<CommandInterface>()) {
+			if (script != this) {
+				script.DoCommand ();
+			}
+		}
+
 		ChangeMaterial (NewFlagMaterial, "CastleFlag");
 		ChangeMaterial (NewLauncherMaterial, "Launcher");
 	}
 
-	public void ChangeMaterial(Material material, string tagName) {
+	public void Despawn() {
+		foreach (Transform childTransform in transform) {
+			Destroy (childTransform.gameObject);
+		}
+	}
+
+
+	void ChangeMaterial(Material material, string tagName) {
 		foreach (Transform childTransform in transform) {
 			GameObject child = childTransform.gameObject;
 			if (child.CompareTag (tagName)) {

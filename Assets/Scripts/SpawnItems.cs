@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SpawnItems : MonoBehaviour
+public class SpawnItems : MonoBehaviour , CommandInterface
 {
     public float radius = 15f;
     public int count = 1;
@@ -8,7 +8,7 @@ public class SpawnItems : MonoBehaviour
     public bool randomizeRotation = false;
     public bool nestItem = true;
 
-    void Start()
+    public void DoCommand()
     {
         foreach (var item in prefabs)
         {
