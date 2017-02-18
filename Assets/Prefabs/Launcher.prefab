@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4317594299410186}
   - component: {fileID: 54505734494774992}
+  - component: {fileID: 114936051544298470}
   m_Layer: 0
   m_Name: Launcher
   m_TagString: Launcher
@@ -217,7 +218,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1030977642568758}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -253,6 +254,20 @@ MonoBehaviour:
   spawn_distance: 2
   angular_uncertainty: 10
   missile: {fileID: 1580494743441892, guid: 8a71c840c520d08479fbfb7ae7246cbe, type: 2}
+--- !u!114 &114936051544298470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030977642568758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692900ac3b5a0294e860851913829e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 10
+  active: 1
+  angular_speed: 1
 --- !u!136 &136693817886042074
 CapsuleCollider:
   m_ObjectHideFlags: 1

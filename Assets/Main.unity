@@ -196,7 +196,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &480270209
+--- !u!1001 &503738797
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -238,10 +238,6 @@ Prefab:
     - target: {fileID: 1863915626491258, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
       propertyPath: m_Name
       value: CastleSpawnPointA
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119847231043566, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
-      propertyPath: m_TagString
-      value: Launcher
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
@@ -339,7 +335,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &1003151147
+--- !u!1001 &1148155124
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -381,10 +377,6 @@ Prefab:
     - target: {fileID: 1863915626491258, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
       propertyPath: m_Name
       value: CastleSpawnPointB
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119847231043566, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
-      propertyPath: m_TagString
-      value: Launcher
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
