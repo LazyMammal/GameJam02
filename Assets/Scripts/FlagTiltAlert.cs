@@ -2,7 +2,6 @@
 
 public class FlagTiltAlert : MonoBehaviour
 {
-
     public float tiltAngle = 45;
 
     // Called for physics updates
@@ -14,6 +13,7 @@ public class FlagTiltAlert : MonoBehaviour
 
         if (dot < Mathf.Cos(tiltAngle * Mathf.Deg2Rad))
         {
+            InfoBox.PrependLine("Flag Destroyed");
             Destroy(gameObject);
         }
     }

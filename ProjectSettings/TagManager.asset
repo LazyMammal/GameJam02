@@ -8,6 +8,7 @@ TagManager:
   - SpawnPoint
   - CastleFlag
   - Wall
+  - InfoBox
   layers:
   - Default
   - TransparentFX
