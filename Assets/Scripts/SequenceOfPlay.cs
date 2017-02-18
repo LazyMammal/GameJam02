@@ -58,13 +58,14 @@ public class SequenceOfPlay : MonoBehaviour {
 			battleScoreCanvas.SetActive (false);
 
 		SetLauncherSpawn ( true );
-
+		NextState ();
 	}
 
 	void TitleScreen() {
 		Debug.Log ("TitleScreen");
 		if (titleScreenCanvas)
 			titleScreenCanvas.SetActive (true);
+		NextState ();
 	}
 
 	void GenerateBattleField() {
@@ -72,6 +73,7 @@ public class SequenceOfPlay : MonoBehaviour {
 		foreach (GameObject spawn in GameObject.FindGameObjectsWithTag("SpawnPoint")) {
 			spawn.GetComponent<CastleSpawnUtilities> ().Spawn ();
 		}
+		NextState ();
 	}
 
 	void BattleFieldFlyOver() {
@@ -101,13 +103,14 @@ public class SequenceOfPlay : MonoBehaviour {
 	void EndSimulation() {
 		Debug.Log ("EndSimulation");
 		SetLauncherSpawn ( false );
+		//Invoke ("NextState", 10.0f);
 	}
 
 	void DistributeWin() {
 		Debug.Log ("DistributeWin");
 		if (battleScoreCanvas)
 			battleScoreCanvas.SetActive (false);
-		
+		//Invoke ("NextState", 10.0f);
 	}
 
 
