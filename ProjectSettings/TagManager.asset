@@ -11,6 +11,7 @@ TagManager:
   - InfoBox
   - Projectile
   - LauncherSpawner
+  - DontKill
   layers:
   - Default
   - TransparentFX
