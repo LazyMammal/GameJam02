@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 222665379001725334}
   - component: {fileID: 114029150936080666}
   m_Layer: 5
-  m_Name: BattleScorePanel2
+  m_Name: Player2Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 222198784800616330}
   - component: {fileID: 114433987942666530}
   m_Layer: 5
-  m_Name: BattleScorePanel1
+  m_Name: Player1Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SCORE :'
+  m_Text: 'WINNINGS :'
 --- !u!114 &114209791291598422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,7 +307,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SCORE :'
+  m_Text: 'WINNINGS :'
 --- !u!114 &114433987942666530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -475,7 +475,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224550001694250902
 RectTransform:
@@ -513,7 +513,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224608067013400702
 RectTransform:

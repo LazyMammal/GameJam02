@@ -54,11 +54,28 @@ MonoBehaviour:
   sequenceDisplayText: {fileID: 0}
   titleScreenCanvas: {fileID: 0}
   biddingCanvas: {fileID: 0}
+  battleScoreCanvas: {fileID: 0}
+  player1FlagCount: 0
+  player2FlagCount: 0
+  player1CastleSpawn: {fileID: 0}
+  player2CastleSpawn: {fileID: 0}
+  player1BiddingPanel: {fileID: 0}
+  player2BiddingPanel: {fileID: 0}
+  player1Coins: 100
+  player2Coins: 100
+  costToSwap: 0
+  playerBidding: 1
   sequenceOfPlay:
   - ClearBattleField
   - TitleScreen
   - GenerateBattleField
   - BattleFieldFlyOver
+  - Bidding
+  - StartSimulation
+  - EndSimulation
+  - Bidding
+  - StartSimulation
+  - EndSimulation
   - Bidding
   - StartSimulation
   - EndSimulation

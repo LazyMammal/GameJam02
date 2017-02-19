@@ -18,6 +18,10 @@ public class SequenceOfPlay : MonoBehaviour {
 	public GameObject player1BiddingPanel;
 	public GameObject player2BiddingPanel;
 
+	public GameObject distributeWinCanvas;
+	public Text player1WinDisplay;
+	public Text player2WinDisplay;
+
 	public int player1Coins = 100;
 	public int player2Coins = 100;
 
@@ -27,6 +31,9 @@ public class SequenceOfPlay : MonoBehaviour {
 	}
 
 	public int playerBidding = 1;
+
+
+
 
 	void UpdateTextInPanel(GameObject playerBiddingPanel, string name, string value) {
 		foreach ( Text child in playerBiddingPanel.GetComponentsInChildren<Text>() ) {
@@ -42,20 +49,35 @@ public class SequenceOfPlay : MonoBehaviour {
 		}
 	}
 
+	public void GlobalIWantThisCastle() {
+		singleton.IWantThisCastle ();
+	}
+
+	public void UpdateBiddingPanelVisibility() {
+		SetInteractability (player1BiddingPanel, playerBidding == 1 );
+		SetInteractability (player2BiddingPanel, playerBidding == 2 );
+	}
+
+	public void IWantThisCastle() {
+		playerBidding = playerBidding == 1 ? 2 : 1;
+		UpdateBiddingPanelVisibility ();
+		UpdatePlayCoins ();
+		NextState ();
+	}
+
 	public void GlobalSwapCastles() {
-		Debug.Log ("I'm globally swapping");
 		singleton.SwapCastles ();
 	}
 
 	public void SwapCastles() {
-		Debug.Log ("I'm locally swapping");
 		player1Coins += playerBidding == 1 ? -costToSwap : costToSwap;
 		player2Coins += playerBidding == 2 ? -costToSwap : costToSwap;
 		increaseSwapPrice ();
+		SwapPlayerCastles ();
 		playerBidding = playerBidding == 1 ? 2 : 1;
 		UpdatePlayCoins ();
-		SetInteractability (player1BiddingPanel, playerBidding == 1 );
-		SetInteractability (player2BiddingPanel, playerBidding == 2 );
+		UpdateFlagCount ();
+		UpdateBiddingPanelVisibility ();
 		Camera.main.GetComponent<CameraZoom>().DoSpin(180);
 	}
 
@@ -134,6 +156,8 @@ public class SequenceOfPlay : MonoBehaviour {
 			biddingCanvas.SetActive (false);
 		if (battleScoreCanvas)
 			battleScoreCanvas.SetActive (false);
+		if (distributeWinCanvas)
+			distributeWinCanvas.SetActive (false);
 
 		SetLauncherSpawn ( true );
 		UpdatePlayCoins ();
@@ -152,53 +176,93 @@ public class SequenceOfPlay : MonoBehaviour {
 		foreach (GameObject spawn in GameObject.FindGameObjectsWithTag("SpawnPoint")) {
 			spawn.GetComponent<CastleSpawnUtilities> ().Spawn ();
 		}
+		UpdateFlagCount ();
 		NextState ();
 	}
 
 	void BattleFieldFlyOver() {
 		Debug.Log ("BattleFieldFlyOver");
-		Camera.main.GetComponent<CameraZoom>().DoSpin();		
+		Camera.main.GetComponent<CameraZoom>().DoSpin();
+		UpdateFlagCount ();
+		Invoke ("NextState", 5.0f);
 	}
 
 	void Bidding() {
-		UpdateFlagCount ();
 		Debug.Log ("Bidding");
+		UpdateFlagCount ();
+		if (player1FlagCount == 0 || player2FlagCount == 0) {
+			NextState ();
+		}
+		if (battleScoreCanvas)
+			battleScoreCanvas.SetActive (false);
 		if (titleScreenCanvas)
 			titleScreenCanvas.SetActive (false);
 		if (biddingCanvas)
 			biddingCanvas.SetActive (true);
+		UpdateBiddingPanelVisibility ();
 		
 	}
 
 	void StartSimulation() {
-		UpdateFlagCount ();
 		Debug.Log ("StartSimulation");
 		if (biddingCanvas)
 			biddingCanvas.SetActive (false);
 		if (battleScoreCanvas)
 			battleScoreCanvas.SetActive (true);
-		
-		SetLauncherSpawn ( true );
+		UpdateFlagCount ();
+		if (player1FlagCount > 0 && player2FlagCount > 0) {
+			SetLauncherSpawn (true);
+			Invoke ("SwitchFromStartSimulation", 3.0f);
+		} else {
+			NextState ();
+		}
+	}
+	void SwitchFromStartSimulation() {
+		if (sequenceOfPlay [state] == "StartSimulation")
+			NextState();
 	}
 
 	void EndSimulation() {
 		Debug.Log ("EndSimulation");
 		SetLauncherSpawn ( false );
-		//Invoke ("NextState", 10.0f);
+		UpdateFlagCount ();
+		DelayedUpdateFlagCount ();
+		if (player1FlagCount > 0 && player2FlagCount > 0) {
+			Invoke ("SwitchFromEndSimulation", 3.0f);
+		} else {
+			NextState ();
+		}
+	}
+	void SwitchFromEndSimulation() {
+		if (sequenceOfPlay [state] == "EndSimulation")
+			NextState();
 	}
 
 	void DistributeWin() {
 		Debug.Log ("DistributeWin");
 		if (battleScoreCanvas)
 			battleScoreCanvas.SetActive (false);
-		//Invoke ("NextState", 10.0f);
+		costToSwap = 0;
+
+		player1WinDisplay.text = "" + ( player1FlagCount > player2FlagCount ? 1000 : 1);
+		player2WinDisplay.text = "" + ( player2FlagCount > player1FlagCount ? 1000 : 1);
+		player1Coins += player1FlagCount > player2FlagCount ? 1000 : 1;
+		player2Coins += player2FlagCount > player1FlagCount ? 1000 : 1;
+
+		if (distributeWinCanvas)
+			distributeWinCanvas.SetActive (true);
+
+		Invoke ("SwitchFromDistributeWin", 10.0f);
+	}
+	void SwitchFromDistributeWin() {
+		if (sequenceOfPlay [state] == "DistributeWin")
+			NextState();
 	}
 
 
 	void SetLauncherSpawn( bool value ) {
 		foreach (GameObject launcherSpawn in GameObject.FindGameObjectsWithTag("LauncherSpawner")) {
 			launcherSpawn.GetComponent<LauncherActivity> ().activate_firing = value;
-			Debug.Log ("Setting launcher ...");
 		}
 	}
 }
