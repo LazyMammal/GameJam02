@@ -315,6 +315,7 @@ MonoBehaviour:
   count: 1
   prefabs:
   - {fileID: 1030977642568758, guid: 63d9d343cf7d4b941a17708ebd09be9e, type: 2}
+  - {fileID: 1371444275187720, guid: ed29a3e485246436d871d7b6fff2e64c, type: 2}
   randomizeRotation: 0
   nestItem: 0
   repeatTimer: {x: 2, y: 3}
