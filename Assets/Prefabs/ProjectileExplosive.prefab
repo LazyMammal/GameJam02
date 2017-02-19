@@ -87,7 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 13a666bbe7215a7458475fb1a7b355a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d4f1337184d5b4a8ebdd38fd5fa149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 1179092583380218, guid: 4542fb5d6db187c4e8e712c1e3f021f6, type: 2}
   big_wall: {fileID: 1273297279508092, guid: 20e76810061ff5a42ac729c55e21beb1, type: 2}
   radius: 5
   power: 250
@@ -155,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
+  torque: {x: 100, y: 100}
   life_span: 5
 --- !u!135 &135912678919127068
 SphereCollider:

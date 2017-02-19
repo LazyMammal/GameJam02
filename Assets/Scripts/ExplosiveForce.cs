@@ -2,6 +2,7 @@
 
 public class ExplosiveForce : MonoBehaviour
 {
+    public GameObject particle;
     public GameObject big_wall;
 
     public float radius = 5.0F;
@@ -43,6 +44,8 @@ public class ExplosiveForce : MonoBehaviour
             Object.Destroy(gameObject);
             //gameObject.SetActive(false);
         }
+        Instantiate(particle, explosionPos, Quaternion.identity);
+
     }
 
 }
