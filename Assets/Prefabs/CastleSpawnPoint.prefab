@@ -57,8 +57,8 @@ MonoBehaviour:
   wall_prefab: {fileID: 1286029898508800, guid: 71308166eab7eb341b5ef845faa08fd5,
     type: 2}
   x_size: 1
-  y_size: 3
-  z_size: 10
+  y_size: 10
+  z_size: 50
   forward_distance: 10
 --- !u!114 &114352003272836550
 MonoBehaviour:

@@ -630,6 +630,22 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1339779059016198, guid: 60f7b053193484076bea0460b75c1c25, type: 2}
+      propertyPath: m_Name
+      value: Player1WinCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134507758254532, guid: 60f7b053193484076bea0460b75c1c25, type: 2}
+      propertyPath: m_Name
+      value: Player2WinCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807089622977998, guid: 60f7b053193484076bea0460b75c1c25, type: 2}
+      propertyPath: m_Name
+      value: ScoreDisplayCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817042943700642, guid: 60f7b053193484076bea0460b75c1c25, type: 2}
+      propertyPath: m_Name
+      value: ScoreDisplayCoin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60f7b053193484076bea0460b75c1c25, type: 2}
   m_IsPrefabParent: 0
@@ -907,34 +923,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114352003272836550, guid: 2ea6974eba09f264c83750bffa8c1273,
         type: 2}
-      propertyPath: NewFlagMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 603728ad8874c4d88b0ebe965e7ce145, type: 2}
-    - target: {fileID: 114352003272836550, guid: 2ea6974eba09f264c83750bffa8c1273,
-        type: 2}
       propertyPath: NewLauncherMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 56f10f3758b11468b8f7111007e57306, type: 2}
     - target: {fileID: 114352003272836550, guid: 2ea6974eba09f264c83750bffa8c1273,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114922239262176020, guid: 2ea6974eba09f264c83750bffa8c1273,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309577240600456, guid: 2ea6974eba09f264c83750bffa8c1273,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114995737577517024, guid: 2ea6974eba09f264c83750bffa8c1273,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: NewFlagMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 603728ad8874c4d88b0ebe965e7ce145, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
   m_IsPrefabParent: 0
@@ -956,7 +952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1297379525
 MonoBehaviour:
   m_ObjectHideFlags: 0
