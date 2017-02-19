@@ -40,7 +40,7 @@ public class SequenceOfPlay : MonoBehaviour {
 		if (sequenceDisplayText == null) {
 			sequenceDisplayText = GameObject.Find ("SequenceOfPlayInfoBox");
 		}
-		NextState ();		
+		NextState ();
 	}
 
 	public string[] sequenceOfPlay = new string[] { "ClearBattleField", "TitleScreen","GenerateBattleField",
@@ -89,12 +89,13 @@ public class SequenceOfPlay : MonoBehaviour {
 		foreach (GameObject spawn in GameObject.FindGameObjectsWithTag("SpawnPoint")) {
 			spawn.GetComponent<CastleSpawnUtilities> ().Spawn ();
 		}
+
 		NextState ();
 	}
 
 	void BattleFieldFlyOver() {
 		Debug.Log ("BattleFieldFlyOver");
-		Camera.main.GetComponent<CameraZoom>().DoSpin();		
+		//Camera.main.GetComponent<CameraZoom>().DoSpin();		
 	}
 
 	void StartSimulation() {
