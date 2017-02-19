@@ -776,6 +776,19 @@ GameObject:
   m_PrefabParentObject: {fileID: 1863915626491258, guid: 2ea6974eba09f264c83750bffa8c1273,
     type: 2}
   m_PrefabInternal: {fileID: 503738797}
+--- !u!114 &795324255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795324249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7164bf8642b458da120dcec2aaa13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angry_pill: {fileID: 1371444275187720, guid: ed29a3e485246436d871d7b6fff2e64c, type: 2}
+  distance: 5
 --- !u!1001 &843374857
 Prefab:
   m_ObjectHideFlags: 0
@@ -1331,6 +1344,19 @@ GameObject:
   m_PrefabParentObject: {fileID: 1863915626491258, guid: 2ea6974eba09f264c83750bffa8c1273,
     type: 2}
   m_PrefabInternal: {fileID: 1148155124}
+--- !u!114 &1378952095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1378952089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7164bf8642b458da120dcec2aaa13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angry_pill: {fileID: 1371444275187720, guid: ed29a3e485246436d871d7b6fff2e64c, type: 2}
+  distance: 5
 --- !u!1001 &1689037566
 Prefab:
   m_ObjectHideFlags: 0
