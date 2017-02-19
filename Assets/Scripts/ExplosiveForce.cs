@@ -27,7 +27,7 @@ public class ExplosiveForce : MonoBehaviour
             }
         }
 
-        //Object.Destroy(gameObject);
+        Object.Destroy(gameObject);
     }
 
 }
