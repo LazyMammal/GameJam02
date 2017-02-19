@@ -27,7 +27,7 @@ public class SequenceOfPlay : MonoBehaviour {
 
 	public int costToSwap = 0;
 	public void increaseSwapPrice() {
-		costToSwap += 10;
+		costToSwap = costToSwap == 0 ? 10 : costToSwap*2;
 	}
 
 	public int playerBidding = 1;
