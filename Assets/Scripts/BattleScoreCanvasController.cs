@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class BattleScoreCanvasController : MonoBehaviour {
 
-	public Text player1Score = null;
-	public Text player2Score = null;
+	public Text playerScore = null;
 
 	// Use this for initialization
 	void Start () {
@@ -22,12 +21,10 @@ public class BattleScoreCanvasController : MonoBehaviour {
 	}
 
 	public void SetScore() {
-		int flagsPlayer1Flags = SequenceOfPlay.singleton.player1FlagCount;
-		int flagsPlayer2Flags = SequenceOfPlay.singleton.player2FlagCount;
+		int coins = SequenceOfPlay.singleton.playerCoins;
 
-		if (player1Score != null && player2Score != null) {
-			player1Score.text = ScoreToString( flagsPlayer1Flags - flagsPlayer2Flags );
-			player2Score.text = ScoreToString( flagsPlayer2Flags - flagsPlayer1Flags );
+		if (playerScore != null) {
+			playerScore.text = ScoreToString( coins );
 		}
 	}
 
