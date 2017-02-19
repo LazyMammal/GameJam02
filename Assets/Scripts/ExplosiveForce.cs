@@ -43,7 +43,15 @@ public class ExplosiveForce : MonoBehaviour
             Instantiate(big_wall, new Vector3(explosionPos.x, 0f, 0f), Quaternion.identity);
             Object.Destroy(gameObject);
             //gameObject.SetActive(false);
+
+            SequenceOfPlay.singleton.AddScore(100);
         }
+        else if (foundWall)
+        {
+            SequenceOfPlay.singleton.AddScore(10);
+        }
+        else SequenceOfPlay.singleton.AddScore(Random.Range(1,17));
+
         Instantiate(particle, explosionPos, Quaternion.identity);
 
     }

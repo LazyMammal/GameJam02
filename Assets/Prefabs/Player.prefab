@@ -51,6 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4789935005104852}
+  - component: {fileID: 114151986919695248}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -130,8 +131,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1787888963549712}
   m_LocalRotation: {x: -0.7071084, y: -0.000000012461015, z: 0.00000004293162, w: -0.7071053}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.3, z: 1.18}
+  m_LocalScale: {x: 1, y: 1.7555944, z: 1}
   m_Children: []
   m_Father: {fileID: 4817717348709068}
   m_RootOrder: 0
@@ -170,14 +171,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502178398080512}
-  m_LocalRotation: {x: 0.22541188, y: -0.061304446, z: 0.037276547, w: -0.9716181}
-  m_LocalPosition: {x: -0.0000002682209, y: 1.025, z: 0.6479993}
+  m_LocalRotation: {x: 0.25276068, y: -0.05927743, z: 0.034830417, w: -0.96508294}
+  m_LocalPosition: {x: -0.047, y: 0.847, z: 0.341}
   m_LocalScale: {x: 0.4393645, y: 0.43936425, z: 0.43936425}
   m_Children:
   - {fileID: 4484705228465428}
   m_Father: {fileID: 4051735061531368}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 334.313, y: 8.676001, z: -6.3760004}
+  m_LocalEulerAnglesHint: {x: 331.07, y: 8.676001, z: -6.3760004}
 --- !u!4 &4999575629589864
 Transform:
   m_ObjectHideFlags: 1
@@ -311,6 +312,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1768356447834414}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114151986919695248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335169593791532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d4e59b3052e3b4ca9046720ad3c896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!114 &114751269979298562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,3 +340,4 @@ MonoBehaviour:
   spawn_distance: 2
   angular_uncertainty: 10
   missile: {fileID: 1580494743441892, guid: 628d1e7297e3d4740b6e35bfb1265b15, type: 2}
+  rotationSpeed: 100

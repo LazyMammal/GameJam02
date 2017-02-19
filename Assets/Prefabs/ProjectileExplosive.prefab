@@ -143,7 +143,7 @@ MonoBehaviour:
   radius: 5
   power: 250
   zapRatio: 0.05
-  bigRatio: 0.1
+  bigRatio: 0.25
 --- !u!114 &114669205811215218
 MonoBehaviour:
   m_ObjectHideFlags: 1

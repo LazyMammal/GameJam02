@@ -4,10 +4,10 @@ public class KillZone : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Wall")
+        //if (other.gameObject.tag != "Wall")
             Destroy(other.gameObject);
-        else
-            other.gameObject.SetActive(false);
+        //else
+        //    other.gameObject.SetActive(false);
     }
 
 }
