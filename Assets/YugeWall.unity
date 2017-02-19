@@ -297,6 +297,53 @@ Prefab:
     - {fileID: 114309577240600456, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &431561309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 431561313}
+  - component: {fileID: 431561310}
+  m_Layer: 0
+  m_Name: EnemyLauncherSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &431561310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431561309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992f65b82378ad34fbedc18ad5169efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 15
+  count: 1
+  prefabs:
+  - {fileID: 1030977642568758, guid: 63d9d343cf7d4b941a17708ebd09be9e, type: 2}
+  randomizeRotation: 0
+  nestItem: 0
+  repeatTimer: {x: 2, y: 3}
+--- !u!4 &431561313
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431561309}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 100.3, y: 0.01, z: 16.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1345714508}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &464322856
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +937,7 @@ Transform:
   - {fileID: 1413332924}
   - {fileID: 1841587891}
   - {fileID: 598537808}
+  - {fileID: 431561313}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -18,7 +18,7 @@ public class PlaceWall : MonoBehaviour, CommandInterface
 
     void Update()
     {
-        if (Time.time > nextTime)
+        if (repeatTimer != Vector2.zero && Time.time > nextTime)
         {
             nextTime = Time.time + Random.Range( repeatTimer.x, repeatTimer.y );
             DoCommand();
