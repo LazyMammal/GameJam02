@@ -27,8 +27,8 @@ public class YugeWall : MonoBehaviour, CommandInterface
         if( bc )
             blockSize = bc.transform.localScale;
 
-        // add some padding
-        blockSize += blockPadding;
+        // set X padding for all placements
+        blockSize.x += blockPadding.x;
     }
 
     public void DoCommand()
@@ -177,8 +177,11 @@ public class YugeWall : MonoBehaviour, CommandInterface
             int height = wallHeight[x];
             if (height <= 0)
             {
+                float v = (float)x / maxLength * Mathf.PI;
                 // get wall height based on math function
-                wallHeight[x] = height = (int)Mathf.Clamp(1f + maxHeight * Mathf.Sin((float)x / maxLength * Mathf.PI * 2f), 1f, maxHeight);
+                wallHeight[x] = height = (int)Mathf.Clamp(maxHeight * (
+                        0.5f + 0.25f * (Mathf.Sin(v * .5f) + 0.5f * Mathf.Cos(v * .375f))
+                    ), 1f, maxHeight);
             }
 
             // get reference to base block
@@ -190,6 +193,9 @@ public class YugeWall : MonoBehaviour, CommandInterface
                 {
                     Vector3 stagger = transform.right * 0.5f * (float)(y%2);
                     Vector3 elevation = transform.up * blockSize.y * y;
+                    // add Y padding *after* main elevation calc
+                    elevation.y += blockPadding.y;
+
                     if (!blockRefs[x, y] || !blockRefs[x, y].activeSelf)
                     {
                         CreateBlock(x, y, block.transform.position + elevation + stagger, block.transform.rotation);
