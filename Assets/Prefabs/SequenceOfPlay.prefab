@@ -61,8 +61,11 @@ MonoBehaviour:
   player2CastleSpawn: {fileID: 0}
   player1BiddingPanel: {fileID: 0}
   player2BiddingPanel: {fileID: 0}
-  player1Coins: 100
-  player2Coins: 100
+  distributeWinCanvas: {fileID: 0}
+  player1WinDisplay: {fileID: 0}
+  player2WinDisplay: {fileID: 0}
+  player1Coins: 500
+  player2Coins: 500
   costToSwap: 0
   playerBidding: 1
   sequenceOfPlay:
