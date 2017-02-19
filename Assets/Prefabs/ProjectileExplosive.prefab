@@ -138,9 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d4f1337184d5b4a8ebdd38fd5fa149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  big_wall: {fileID: 1273297279508092, guid: 20e76810061ff5a42ac729c55e21beb1, type: 2}
   radius: 5
   power: 250
-  zapRatio: 0.15
+  zapRatio: 0.05
+  bigRatio: 0.1
 --- !u!114 &114669205811215218
 MonoBehaviour:
   m_ObjectHideFlags: 1

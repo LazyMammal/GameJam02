@@ -89,9 +89,10 @@ public class YugeWall : MonoBehaviour, CommandInterface
 
     void CreateBlock(int x, int y, Vector3 pos, Quaternion rot)
     {
-        // re-use block if exists
+            /*
+        // TODO: re-use block if exists
         GameObject block = blockRefs[x, y];
-        if (block == null)
+        if (block == null || !block.gameObject)
         {
             block = (GameObject)Instantiate(block_prefab, pos, rot);
         }
@@ -100,6 +101,8 @@ public class YugeWall : MonoBehaviour, CommandInterface
             block.transform.position = pos;
             block.transform.rotation = rot;
         }
+         */
+        GameObject block = (GameObject)Instantiate(block_prefab, pos, rot);
         block.SetActive(true);
         block.transform.SetParent(transform);
 
@@ -121,8 +124,9 @@ public class YugeWall : MonoBehaviour, CommandInterface
 
             if (block)
             {
-                // hide block but don't destroy the object
-                block.SetActive(false);
+                // TODO: hide block but don't destroy the object
+                // block.SetActive(false);
+                GameObject.Destroy(block);
             }
         }
     }
