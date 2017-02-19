@@ -974,6 +974,11 @@ Prefab:
       objectReference: {fileID: 408366775}
     - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
         type: 2}
+      propertyPath: distributeWinCanvas
+      value: 
+      objectReference: {fileID: 666437751}
+    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
+        type: 2}
       propertyPath: player1WinDisplay
       value: 
       objectReference: {fileID: 760883498}
@@ -982,21 +987,6 @@ Prefab:
       propertyPath: player2WinDisplay
       value: 
       objectReference: {fileID: 926499548}
-    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
-        type: 2}
-      propertyPath: distributeWinCanvas
-      value: 
-      objectReference: {fileID: 666437751}
-    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
-        type: 2}
-      propertyPath: player1Coins
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114916802314969388, guid: a3c2d9aea5c2e491da0ab468328f3988,
-        type: 2}
-      propertyPath: player2Coins
-      value: 500
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3c2d9aea5c2e491da0ab468328f3988, type: 2}
   m_IsPrefabParent: 0
