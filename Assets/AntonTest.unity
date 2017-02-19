@@ -428,6 +428,12 @@ Prefab:
       propertyPath: targetX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114309577240600456, guid: 2ea6974eba09f264c83750bffa8c1273,
+        type: 2}
+      propertyPath: angry_pill
+      value: 
+      objectReference: {fileID: 1371444275187720, guid: ed29a3e485246436d871d7b6fff2e64c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
   m_IsPrefabParent: 0
@@ -1212,6 +1218,12 @@ Prefab:
       propertyPath: targetX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114309577240600456, guid: 2ea6974eba09f264c83750bffa8c1273,
+        type: 2}
+      propertyPath: angry_pill
+      value: 
+      objectReference: {fileID: 1371444275187720, guid: ed29a3e485246436d871d7b6fff2e64c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
   m_IsPrefabParent: 0

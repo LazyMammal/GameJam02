@@ -222,6 +222,7 @@ public class SequenceOfPlay : MonoBehaviour {
 		UpdateFlagCount ();
 		if (player1FlagCount > 0 && player2FlagCount > 0) {
 			SetLauncherSpawn (true);
+			SpawnAngryPills ();
 			Invoke ("SwitchFromStartSimulation", 3.0f);
 		} else {
 			NextState ();
@@ -274,5 +275,10 @@ public class SequenceOfPlay : MonoBehaviour {
 		foreach (GameObject launcherSpawn in GameObject.FindGameObjectsWithTag("LauncherSpawner")) {
 			launcherSpawn.GetComponent<LauncherActivity> ().activate_firing = value;
 		}
+	}
+
+	void SpawnAngryPills() {
+		player1CastleSpawn.GetComponent<PlacePills> ().Spawn ();
+		player2CastleSpawn.GetComponent<PlacePills> ().Spawn ();
 	}
 }

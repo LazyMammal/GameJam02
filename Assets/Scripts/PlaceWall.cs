@@ -18,7 +18,7 @@ public class PlaceWall : MonoBehaviour, CommandInterface {
 			gameObject.transform.rotation );
 		wall.transform.SetParent(transform);
 	}
-
+		
 	public void DoCommand() {
 		int maxX = Random.Range (0, x_size);
 		int maxY = Random.Range (1, y_size);
