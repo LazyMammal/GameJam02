@@ -252,7 +252,7 @@ public class SequenceOfPlay : MonoBehaviour {
 		if (distributeWinCanvas)
 			distributeWinCanvas.SetActive (true);
 
-		Invoke ("SwitchFromDistributeWin", 10.0f);
+		Invoke ("SwitchFromDistributeWin", 5.0f);
 	}
 	void SwitchFromDistributeWin() {
 		if (sequenceOfPlay [state] == "DistributeWin")

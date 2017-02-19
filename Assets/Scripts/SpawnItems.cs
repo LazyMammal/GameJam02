@@ -11,11 +11,12 @@ public class SpawnItems : MonoBehaviour , CommandInterface
 
     public void DoCommand()
     {
+		Quaternion rot = transform.rotation;
         foreach (var item in prefabs)
         {
-			for (int i = (int)Random.Range(minCount,maxCount); i >= 0; i--) {
-                Quaternion rot = transform.rotation;
-				Vector3 pos3 = new Vector3(targetX, 0, Random.Range(-maxZ, maxZ));
+			int numItems = (int)Random.Range (minCount, maxCount);
+			for (int i = 0; i < numItems; i++) {
+				Vector3 pos3 = new Vector3(targetX, 0, i * maxZ / numItems - maxZ/2f );
 				GameObject go = (GameObject)Instantiate(item, transform.position + pos3, transform.rotation);
                 if (nestItem)
                 {
