@@ -58,7 +58,7 @@ public class SequenceOfPlay : MonoBehaviour {
 
 	public void UpdateBiddingPanelVisibility() {
 		SetInteractability (player1BiddingPanel, playerBidding == 1 , player1Coins > costToSwap );
-		SetInteractability (player2BiddingPanel, playerBidding == 2 , player1Coins > costToSwap );
+		SetInteractability (player2BiddingPanel, playerBidding == 2 , player2Coins > costToSwap );
 	}
 
 	public void IWantThisCastle() {

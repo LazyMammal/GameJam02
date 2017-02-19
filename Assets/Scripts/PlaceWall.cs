@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaceWall : MonoBehaviour, CommandInterface {
 
 	public GameObject wall_prefab;
-	public int x_size = 1;
+	int x_size = 2;
 	public int y_size = 10;
 	public int z_size = 50;
 	public int distance = -5;
@@ -20,9 +20,10 @@ public class PlaceWall : MonoBehaviour, CommandInterface {
 	}
 
 	public void DoCommand() {
+		int maxX = Random.Range (0, x_size);
 		int maxY = Random.Range (1, y_size);
 		int maxZ = Random.Range (1, z_size);
-		for (int x = 0; x < x_size; x++) {
+		for (int x = 0; x < maxX; x++) {
 			for (int y = 0; y < maxY; y++) {
 				for (int z = 0; z < maxZ; z++) {
 					PlaceSingleWall (x, y, z - maxZ/2, distance);

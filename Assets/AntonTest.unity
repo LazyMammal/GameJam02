@@ -411,7 +411,7 @@ Prefab:
     - target: {fileID: 114922239262176020, guid: 2ea6974eba09f264c83750bffa8c1273,
         type: 2}
       propertyPath: maxCount
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114995737577517024, guid: 2ea6974eba09f264c83750bffa8c1273,
         type: 2}
@@ -422,6 +422,11 @@ Prefab:
         type: 2}
       propertyPath: maxZ
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114922239262176020, guid: 2ea6974eba09f264c83750bffa8c1273,
+        type: 2}
+      propertyPath: targetX
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
@@ -980,7 +985,7 @@ Prefab:
     - target: {fileID: 114922239262176020, guid: 2ea6974eba09f264c83750bffa8c1273,
         type: 2}
       propertyPath: maxCount
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114995737577517024, guid: 2ea6974eba09f264c83750bffa8c1273,
         type: 2}
@@ -995,7 +1000,7 @@ Prefab:
     - target: {fileID: 114922239262176020, guid: 2ea6974eba09f264c83750bffa8c1273,
         type: 2}
       propertyPath: targetX
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ea6974eba09f264c83750bffa8c1273, type: 2}
@@ -1018,7 +1023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1297379525
 MonoBehaviour:
   m_ObjectHideFlags: 0
