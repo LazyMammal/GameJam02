@@ -43,9 +43,12 @@ public class SequenceOfPlay : MonoBehaviour {
 		}
 	}
 
-	void SetInteractability(GameObject playerBiddingPanel, bool value) {
+	void SetInteractability(GameObject playerBiddingPanel, bool value, bool hasMoney) {
 		foreach ( Button child in playerBiddingPanel.GetComponentsInChildren<Button>() ) {
 			child.interactable = value;
+			if (child.name == "OtherCastle" && !hasMoney) {
+				child.interactable = false;
+			}
 		}
 	}
 
@@ -54,8 +57,8 @@ public class SequenceOfPlay : MonoBehaviour {
 	}
 
 	public void UpdateBiddingPanelVisibility() {
-		SetInteractability (player1BiddingPanel, playerBidding == 1 );
-		SetInteractability (player2BiddingPanel, playerBidding == 2 );
+		SetInteractability (player1BiddingPanel, playerBidding == 1 , player1Coins > costToSwap );
+		SetInteractability (player2BiddingPanel, playerBidding == 2 , player1Coins > costToSwap );
 	}
 
 	public void IWantThisCastle() {
