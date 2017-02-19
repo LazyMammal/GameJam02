@@ -138,8 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d4f1337184d5b4a8ebdd38fd5fa149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
-  power: 1
+  radius: 5
+  power: 150
+  zapRatio: 0.15
 --- !u!114 &114669205811215218
 MonoBehaviour:
   m_ObjectHideFlags: 1

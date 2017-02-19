@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb12d4f9cdfb4e02b8a7a07ee16cd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
+  cooldown: 2
   activate_firing: 1
   spawn_distance: 2
   angular_uncertainty: 10
