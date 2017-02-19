@@ -22,12 +22,14 @@ public class SequenceOfPlay : MonoBehaviour {
 	public Text player1WinDisplay;
 	public Text player2WinDisplay;
 
-	public int player1Coins = 100;
-	public int player2Coins = 100;
+	public int player1Coins = 500;
+	public int player2Coins = 500;
+
+	string castleSwitchText = "Alter the facts\nCost : ";
 
 	public int costToSwap = 0;
 	public void increaseSwapPrice() {
-		costToSwap = costToSwap == 0 ? 10 : costToSwap*2;
+		costToSwap = (costToSwap == 0) ? 10 : costToSwap*2;
 	}
 
 	public int playerBidding = 1;
@@ -87,8 +89,8 @@ public class SequenceOfPlay : MonoBehaviour {
 	public void UpdatePlayCoins() {
 		UpdateTextInPanel (player1BiddingPanel, "CoinsDisplay", "" + player1Coins);
 		UpdateTextInPanel (player2BiddingPanel, "CoinsDisplay", "" + player2Coins);
-		UpdateTextInPanel (player1BiddingPanel, "OtherCastleText", "Switch Castles\nCost : " + costToSwap);
-		UpdateTextInPanel (player2BiddingPanel, "OtherCastleText", "Switch Castles\nCost : " + costToSwap);
+		UpdateTextInPanel (player1BiddingPanel, "OtherCastleText", castleSwitchText + costToSwap);
+		UpdateTextInPanel (player2BiddingPanel, "OtherCastleText", castleSwitchText + costToSwap);
 	}
 
 
@@ -133,6 +135,7 @@ public class SequenceOfPlay : MonoBehaviour {
 		"BattleFieldFlyOver","Bidding","StartSimulation","EndSimulation","DistributeWin"};
 
 	public int state = -1;
+
 	public void NextState() {
 		state++;
 		state = state < sequenceOfPlay.Length ? state : 0;
@@ -187,7 +190,11 @@ public class SequenceOfPlay : MonoBehaviour {
 		Debug.Log ("BattleFieldFlyOver");
 		Camera.main.GetComponent<CameraZoom>().DoSpin();
 		UpdateFlagCount ();
-		Invoke ("NextState", 5.0f);
+		Invoke ("SwitchFromBattleFieldFlyOver", 25.0f);
+	}
+	void SwitchFromBattleFieldFlyOver() {
+		if (sequenceOfPlay [state] == "BattleFieldFlyOver")
+			NextState();
 	}
 
 	void Bidding() {
