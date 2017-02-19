@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SequenceOfPlay : MonoBehaviour {
 
+	public GameObject cameraPivot;
+
 	public GameObject sequenceDisplayText;
 	public GameObject titleScreenCanvas;
 	public GameObject biddingCanvas;
@@ -83,7 +85,7 @@ public class SequenceOfPlay : MonoBehaviour {
 		UpdatePlayCoins ();
 		UpdateFlagCount ();
 		UpdateBiddingPanelVisibility ();
-		Camera.main.GetComponent<CameraZoom>().DoSpin(180);
+		cameraPivot.GetComponent<CameraTool>().Spin(180);
 	}
 
 	public void UpdatePlayCoins() {
@@ -188,7 +190,7 @@ public class SequenceOfPlay : MonoBehaviour {
 
 	void BattleFieldFlyOver() {
 		Debug.Log ("BattleFieldFlyOver");
-		Camera.main.GetComponent<CameraZoom>().DoSpin();
+		cameraPivot.GetComponent<CameraTool>().Spin(360);
 		UpdateFlagCount ();
 		Invoke ("SwitchFromBattleFieldFlyOver", 25.0f);
 	}
