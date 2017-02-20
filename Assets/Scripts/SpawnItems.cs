@@ -8,6 +8,19 @@ public class SpawnItems : MonoBehaviour , CommandInterface
     public bool randomizeRotation = false;
     public bool nestItem = true;
 
+    public Vector2 repeatTimer = Vector2.zero;
+    private float nextTime = 0f;
+
+    void Update()
+    {
+        if (repeatTimer != Vector2.zero && Time.time > nextTime)
+        {
+            nextTime = Time.time + Random.Range( repeatTimer.x, repeatTimer.y );
+            DoCommand();
+        }
+
+    }
+
     public void DoCommand()
     {
         foreach (var item in prefabs)

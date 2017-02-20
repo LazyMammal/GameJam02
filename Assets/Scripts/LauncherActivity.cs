@@ -29,7 +29,12 @@ public class LauncherActivity : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void FixedUpdate () {
+    public float rotationSpeed = 100.0F;
+    void Update() {
+        float rotation = Input.GetAxis("Vertical") * rotationSpeed;
+        rotation *= Time.deltaTime;
+        transform.Rotate(rotation, 0, 0);
+    
 		if (activate_firing && Time.time > cooldown_finished) {
 			cooldown_finished = Time.time + cooldown;
 			Fire ();

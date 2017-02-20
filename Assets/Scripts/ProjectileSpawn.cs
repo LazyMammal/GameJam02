@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileSpawn : MonoBehaviour {
 
 	public float speed = 22f;
+	public Vector2 torque = new Vector2( 100f, 100f);
 	public float life_span = 5f; // seconds
 
 	private float despawn_time;
@@ -14,6 +15,7 @@ public class ProjectileSpawn : MonoBehaviour {
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody>();
 		rb.AddForce( transform.forward * speed, ForceMode.VelocityChange );
+		rb.AddTorque(new Vector3( Random.Range(torque.x, torque.y), Random.Range(torque.x, torque.y), Random.Range(torque.x, torque.y)));
 		despawn_time = Time.time + life_span;
 	}
 	

@@ -14,7 +14,7 @@ public class FlagTiltAlert : MonoBehaviour
         if (dot < Mathf.Cos(tiltAngle * Mathf.Deg2Rad))
         {
             InfoBox.PrependLine("Flag Destroyed");
-			SequenceOfPlay.singleton.DelayedUpdateFlagCount ();
+			//SequenceOfPlay.singleton.DelayedUpdateFlagCount ();
             Destroy(gameObject);
         }
     }
