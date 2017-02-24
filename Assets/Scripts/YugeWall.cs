@@ -6,7 +6,7 @@ public class YugeWall : MonoBehaviour, CommandInterface
 {
     public GameObject block_prefab, half_block_prefab, half_block2_prefab;
     public Transform wallHeadTrigger, wallTailTrigger;
-    public int maxHeight = 10;
+    public int maxHeight = 10, sectionLength = 50;
     public int maxLength = 150;
     private int[] wallHeight;
     private GameObject[,] blockRefs;
@@ -97,17 +97,17 @@ public class YugeWall : MonoBehaviour, CommandInterface
     void CreateBlock(int x, int y, Vector3 pos, Quaternion rot, int half = 0)
     {
         GameObject block = null;
-        if( half == 1)
+        if (half == 1)
         {
-            block = (GameObject)Instantiate(half_block_prefab, pos, rot);   
+            block = (GameObject)Instantiate(half_block_prefab, pos, rot);
         }
-        else if( half == -1 )
+        else if (half == -1)
         {
-            block = (GameObject)Instantiate(half_block2_prefab, pos, rot);   
+            block = (GameObject)Instantiate(half_block2_prefab, pos, rot);
         }
         else
         {
-            block = (GameObject)Instantiate(block_prefab, pos, rot);   
+            block = (GameObject)Instantiate(block_prefab, pos, rot);
         }
 
         block.SetActive(true);
@@ -170,7 +170,7 @@ public class YugeWall : MonoBehaviour, CommandInterface
         }
 
         // create base level block
-        CreateBlock(wallHead, 0, head.position + transform.right * blockSize.x, head.rotation);
+        CreateBlock(wallHead, 0, head.position + transform.right * blockSize.x, head.rotation, GetBlockType(wallHead, 0));
         wallLength++;
 
         // create additional blocks in previous columns
@@ -209,13 +209,28 @@ public class YugeWall : MonoBehaviour, CommandInterface
 
                     if (!blockRefs[x, y] || !blockRefs[x, y].activeSelf)
                     {
-                        CreateBlock(x, y, block.transform.position + elevation + stagger, block.transform.rotation);
+                        CreateBlock(x, y, block.transform.position + elevation + stagger, block.transform.rotation, GetBlockType(x, y));
                         break;
                     }
                 }
             }
 
         }
+    }
+
+    private int GetBlockType(int x, int y)
+    {
+        if (y % 2 == 0 && x % sectionLength == 0)
+        {
+            return 1;
+        }
+
+        if (y % 2 == 1 && x % sectionLength == sectionLength - 1)
+        {
+            return -1;
+        }
+
+        return 0;
     }
 }
 
