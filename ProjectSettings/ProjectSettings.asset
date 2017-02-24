@@ -460,8 +460,9 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudServicesEnabled:
+    UNet: 1
+  cloudProjectId: c44e74d9-a985-493a-8f86-61aaed8b665f
+  projectName: GameJam02
+  organizationId: lazymammal
   cloudEnabled: 0
