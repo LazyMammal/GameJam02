@@ -3,9 +3,11 @@
 public class Mover : MonoBehaviour
 {
     public Vector3 velocity = Vector3.zero;
+    public bool moving = false;
 
     void Update()
     {
-		transform.position += velocity * Time.deltaTime;
+        if (moving)
+            transform.position += velocity * Time.deltaTime;
     }
 }

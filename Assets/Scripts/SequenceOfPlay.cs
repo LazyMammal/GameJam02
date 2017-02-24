@@ -11,6 +11,9 @@ public class SequenceOfPlay : MonoBehaviour
     public GameObject titleScreenCanvas;
     public GameObject battleScoreCanvas;
 
+    public GameObject playerController;
+    public GameObject viewFrame;
+
     public int playerCoins;
 
     private int playerScore = 0;
@@ -110,7 +113,7 @@ public class SequenceOfPlay : MonoBehaviour
         Debug.Log("TitleScreen");
         if (titleScreenCanvas)
             titleScreenCanvas.SetActive(true);
-        NextState();
+        //NextState();
     }
 
     void GenerateBattleField()
@@ -135,6 +138,12 @@ public class SequenceOfPlay : MonoBehaviour
         Debug.Log("StartSimulation");
         if (battleScoreCanvas)
             battleScoreCanvas.SetActive(true);
+
+        if ( playerController && viewFrame )
+        {
+            playerController.SetActive(true);
+            viewFrame.GetComponent<Mover>().moving = true;
+        }
 
         //SetLauncherSpawn ( true );
     }
