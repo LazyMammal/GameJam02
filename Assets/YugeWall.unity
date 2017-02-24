@@ -214,11 +214,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block_prefab: {fileID: 1286029898508800, guid: 2ac2462047b54b647ae404578fc5967d,
     type: 2}
+  half_block_prefab: {fileID: 1286029898508800, guid: b428f56367acc1047b1a0cfa85685cca,
+    type: 2}
+  half_block2_prefab: {fileID: 1286029898508800, guid: 195fe5f3f1a424047b723bbbf1bd8a50,
+    type: 2}
   wallHeadTrigger: {fileID: 580972203}
   wallTailTrigger: {fileID: 1114532056}
   maxHeight: 15
   maxLength: 150
-  blockPadding: {x: 0.05, y: 0.15, z: 0.05}
+  blockSize: {x: 1, y: 0.5, z: 1}
+  blockPadding: {x: 0.015, y: 0.015, z: 0.015}
 --- !u!1001 &308445958
 Prefab:
   m_ObjectHideFlags: 0

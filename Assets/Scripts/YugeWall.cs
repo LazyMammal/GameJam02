@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class YugeWall : MonoBehaviour, CommandInterface
 {
-    public GameObject block_prefab;
+    public GameObject block_prefab, half_block_prefab, half_block2_prefab;
     public Transform wallHeadTrigger, wallTailTrigger;
     public int maxHeight = 10;
     public int maxLength = 150;
@@ -12,7 +12,7 @@ public class YugeWall : MonoBehaviour, CommandInterface
     private GameObject[,] blockRefs;
     private int wallHead = 0, wallTail = 0, wallLength = 0;
     private bool isPaused = true;
-    private Vector3 blockSize = Vector3.one;
+    public Vector3 blockSize = Vector3.one;
     public Vector3 blockPadding = new Vector3(0.05f, 0.05f, 0.05f);
 
     void Start()
@@ -21,11 +21,18 @@ public class YugeWall : MonoBehaviour, CommandInterface
         blockRefs = new GameObject[maxLength, maxHeight];
 
         if (block_prefab == null)
-           block_prefab = Instantiate(Resources.Load("YugeWallBlock", typeof(GameObject))) as GameObject;
+            block_prefab = Instantiate(Resources.Load("YugeWallBlock", typeof(GameObject))) as GameObject;
 
-        BoxCollider bc = block_prefab.GetComponentInChildren<BoxCollider>();
-        if( bc )
-            blockSize = bc.transform.localScale;
+        if (half_block_prefab == null)
+            half_block_prefab = Instantiate(Resources.Load("YugeWallHalfBlock", typeof(GameObject))) as GameObject;
+
+        if (half_block2_prefab == null)
+            half_block2_prefab = Instantiate(Resources.Load("YugeWallHalfBlock2", typeof(GameObject))) as GameObject;
+
+
+        //BoxCollider bc = block_prefab.GetComponentInChildren<BoxCollider>();
+        //if (bc)
+        //    blockSize = bc.transform.TransformPoint( bc.size );
 
         // set X padding for all placements
         blockSize.x += blockPadding.x;
@@ -87,22 +94,22 @@ public class YugeWall : MonoBehaviour, CommandInterface
         return tr;
     }
 
-    void CreateBlock(int x, int y, Vector3 pos, Quaternion rot)
+    void CreateBlock(int x, int y, Vector3 pos, Quaternion rot, int half = 0)
     {
-            /*
-        // TODO: re-use block if exists
-        GameObject block = blockRefs[x, y];
-        if (block == null || !block.gameObject)
+        GameObject block = null;
+        if( half == 1)
         {
-            block = (GameObject)Instantiate(block_prefab, pos, rot);
+            block = (GameObject)Instantiate(half_block_prefab, pos, rot);   
+        }
+        else if( half == -1 )
+        {
+            block = (GameObject)Instantiate(half_block2_prefab, pos, rot);   
         }
         else
         {
-            block.transform.position = pos;
-            block.transform.rotation = rot;
+            block = (GameObject)Instantiate(block_prefab, pos, rot);   
         }
-         */
-        GameObject block = (GameObject)Instantiate(block_prefab, pos, rot);
+
         block.SetActive(true);
         block.transform.SetParent(transform);
 
@@ -195,7 +202,7 @@ public class YugeWall : MonoBehaviour, CommandInterface
                 // add at most one block
                 for (int y = 1; y < height && y < maxHeight; y++)
                 {
-                    Vector3 stagger = transform.right * 0.5f * (float)(y%2);
+                    Vector3 stagger = transform.right * 0.5f * (float)(y % 2);
                     Vector3 elevation = transform.up * blockSize.y * y;
                     // add Y padding *after* main elevation calc
                     elevation.y += blockPadding.y;
