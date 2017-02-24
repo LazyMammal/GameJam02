@@ -114,6 +114,7 @@ public class SequenceOfPlay : MonoBehaviour
 
     void TitleScreen()
     {
+        Cursor.visible = true;
         Debug.Log("TitleScreen");
         if (battleScoreCanvas)
             battleScoreCanvas.SetActive(false);
@@ -146,11 +147,13 @@ public class SequenceOfPlay : MonoBehaviour
     {
         Debug.Log("StartSimulation");
 
+        Cursor.visible = false;
+
         if (titleScreen)
         {
             titleScreen.SetActive(false);
             titleScreenCanvas.transform.Find("StartButton").GetComponentInChildren<Text>().text = "RESUME";
-            titleScreenCanvas.transform.Find("RestartButton").gameObject.SetActive(true);
+            //titleScreenCanvas.transform.Find("RestartButton").gameObject.SetActive(true);
         }
         if (battleScoreCanvas)
             battleScoreCanvas.SetActive(true);
