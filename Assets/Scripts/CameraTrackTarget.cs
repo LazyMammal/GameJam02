@@ -3,14 +3,7 @@
 public class CameraTrackTarget : MonoBehaviour
 {
     public Transform target;
-    private Camera cam;
     public float speed = 25f;
-
-    void Start()
-    {
-        // get camera
-        cam = gameObject.GetComponent<Camera>(); ;
-    }
 
     private Vector3 velocity = Vector3.zero;
     void Update()

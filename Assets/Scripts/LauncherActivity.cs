@@ -2,10 +2,15 @@
 
 public class LauncherActivity : MonoBehaviour {
 
+    public AudioClip launchSound;
+
+    private AudioSource source;
 	public float cooldown = 1f;	// time between shots
 	public bool activate_firing = false;	// can shoot or not
 	public float spawn_distance = 2f; // distance from center of cannon that missile spawns
 	public float angular_uncertainty = 10f; // uncertainty in degrees
+    private float lowPitchRange = .75F;
+    private float highPitchRange = 1.5F;
 
 	public GameObject missile;	// the missile to shoot
 
@@ -16,6 +21,7 @@ public class LauncherActivity : MonoBehaviour {
 		if (missile == null) {
 			missile = Instantiate(Resources.Load("Projectile", typeof(GameObject))) as GameObject;
 		}
+        source = GetComponent<AudioSource>();
 	}
 
 	float NextRandom() {
@@ -47,6 +53,12 @@ public class LauncherActivity : MonoBehaviour {
 		Instantiate (missile, 
 			gameObject.transform.position + gameObject.transform.forward * spawn_distance, 
 			direct );
+
+		if( source )
+		{
+			source.pitch = Random.Range (lowPitchRange,highPitchRange);
+			source.PlayOneShot(launchSound);
+		}
 		
 	}
 }

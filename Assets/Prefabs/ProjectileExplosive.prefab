@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114584905421490922}
   - component: {fileID: 114164789783540220}
   - component: {fileID: 82760953775708944}
-  - component: {fileID: 82687531572154038}
   m_Layer: 0
   m_Name: ProjectileExplosive
   m_TagString: Projectile
@@ -130,86 +129,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &82687531572154038
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1580494743441892}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!82 &82760953775708944
 AudioSource:
   m_ObjectHideFlags: 1
@@ -219,8 +138,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -301,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cce12f17209034eb615a167aa897ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crashSoft: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
+  crashSoft: {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
   crashHard: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
 --- !u!114 &114584905421490922
 MonoBehaviour:
@@ -317,9 +236,9 @@ MonoBehaviour:
   particle: {fileID: 1179092583380218, guid: 4542fb5d6db187c4e8e712c1e3f021f6, type: 2}
   big_wall: {fileID: 1273297279508092, guid: 20e76810061ff5a42ac729c55e21beb1, type: 2}
   radius: 5
-  power: 250
-  zapRatio: 0.05
-  bigRatio: 0.25
+  power: 125
+  zapRatio: 0.5
+  bigRatio: 0.12
 --- !u!114 &114669205811215218
 MonoBehaviour:
   m_ObjectHideFlags: 1
