@@ -12,6 +12,18 @@ public class PlayerInput : MonoBehaviour
         float translation = Input.GetAxis("Horizontal") * speed;
         translation *= Time.deltaTime;
         transform.Translate(translation, 0, 0);
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (Time.timeScale > 0)
+            {
+                // pause
+                Time.timeScale = 0;
+
+                // show title screen
+                SequenceOfPlay.singleton.NextState(2);
+            }
+            else SequenceOfPlay.singleton.NextState();
+        }
     }
 }
-

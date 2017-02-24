@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SequenceOfPlay : MonoBehaviour
 {
 
     public Text scoreText;
     public GameObject sequenceDisplayText;
-    public GameObject titleScreenCanvas;
+    public GameObject titleScreen;
+    private GameObject titleScreenCanvas;
     public GameObject battleScoreCanvas;
 
     public GameObject playerController;
@@ -23,9 +25,9 @@ public class SequenceOfPlay : MonoBehaviour
         if (scoreText)
         {
             scoreText.text = "$" + playerScore;
-			//Debug.Log(scoreText.text);
+            //Debug.Log(scoreText.text);
         }
-		//Debug.Log(playerScore);
+        //Debug.Log(playerScore);
     }
 
     void UpdateTextInPanel(GameObject canvas, string name, string value)
@@ -66,6 +68,9 @@ public class SequenceOfPlay : MonoBehaviour
         {
             sequenceDisplayText = GameObject.Find("SequenceOfPlayInfoBox");
         }
+
+        titleScreenCanvas = GameObject.Find("TitleCanvas");
+
         NextState();
     }
 
@@ -73,9 +78,9 @@ public class SequenceOfPlay : MonoBehaviour
         "BattleFieldFlyOver","Bidding","StartSimulation","EndSimulation","DistributeWin"};
 
     public int state = -1;
-    public void NextState()
+    public void NextState(int goToState = -1)
     {
-        state++;
+        state = goToState >= 0 ? goToState : state + 1;
         state = state < sequenceOfPlay.Length ? state : 0;
         string stateText = sequenceOfPlay[state];
         if (sequenceDisplayText != null)
@@ -99,21 +104,21 @@ public class SequenceOfPlay : MonoBehaviour
         {
             Destroy(item);
         }
-        if (titleScreenCanvas)
-            titleScreenCanvas.SetActive(false);
+        if (titleScreen)
+            titleScreen.SetActive(false);
         if (battleScoreCanvas)
             battleScoreCanvas.SetActive(false);
 
-        //SetLauncherSpawn ( true );
         NextState();
     }
 
     void TitleScreen()
     {
         Debug.Log("TitleScreen");
-        if (titleScreenCanvas)
-            titleScreenCanvas.SetActive(true);
-        //NextState();
+        if (battleScoreCanvas)
+            battleScoreCanvas.SetActive(false);
+        if (titleScreen)
+            titleScreen.SetActive(true);
     }
 
     void GenerateBattleField()
@@ -127,32 +132,41 @@ public class SequenceOfPlay : MonoBehaviour
         NextState();
     }
 
-    void BattleFieldFlyOver()
+    void RestartEverything()
     {
-        Debug.Log("BattleFieldFlyOver");
-        //Camera.main.GetComponent<CameraZoom>().DoSpin();		
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void QuitGame()
+    {
+        Application.Quit();
     }
 
     void StartSimulation()
     {
         Debug.Log("StartSimulation");
+
+        if (titleScreen)
+        {
+            titleScreen.SetActive(false);
+            titleScreenCanvas.transform.Find("StartButton").GetComponentInChildren<Text>().text = "RESUME";
+            titleScreenCanvas.transform.Find("RestartButton").gameObject.SetActive(true);
+        }
         if (battleScoreCanvas)
             battleScoreCanvas.SetActive(true);
 
-        if ( playerController && viewFrame )
+        if (playerController && viewFrame)
         {
             playerController.SetActive(true);
             viewFrame.GetComponent<Mover>().moving = true;
         }
 
-        //SetLauncherSpawn ( true );
-    }
+        if (titleScreen)
+            titleScreen.transform.Find("Truck").gameObject.SetActive(false);
 
-    void EndSimulation()
-    {
-        Debug.Log("EndSimulation");
-        //SetLauncherSpawn ( false );
-        //Invoke ("NextState", 10.0f);
+        Time.timeScale = 1f;
+
+        //SetLauncherSpawn ( true );
     }
 
     void DistributeWin()
