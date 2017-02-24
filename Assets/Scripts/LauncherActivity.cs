@@ -38,6 +38,7 @@ public class LauncherActivity : MonoBehaviour {
 		if ((Input.GetButton("Fire1") || activate_firing) && Time.time > cooldown_finished) {
 			cooldown_finished = Time.time + cooldown;
 			Fire ();
+			SequenceOfPlay.singleton.AddScore(10);
 		}
 	}
 

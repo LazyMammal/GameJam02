@@ -19,10 +19,10 @@ public class SequenceOfPlay : MonoBehaviour
         playerScore += score;
         if (scoreText)
         {
-            scoreText.text = "" + playerScore;
-			Debug.Log(scoreText.text);
+            scoreText.text = "$" + playerScore;
+			//Debug.Log(scoreText.text);
         }
-		Debug.Log(playerScore);
+		//Debug.Log(playerScore);
     }
 
     void UpdateTextInPanel(GameObject canvas, string name, string value)
