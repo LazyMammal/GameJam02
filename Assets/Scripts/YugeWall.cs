@@ -15,8 +15,12 @@ public class YugeWall : MonoBehaviour, CommandInterface
     public Vector3 blockSize = Vector3.one;
     public Vector3 blockPadding = new Vector3(0.05f, 0.05f, 0.05f);
 
+    private int randOffset = 0;
+
     void Start()
     {
+        randOffset = Random.Range(0, 123456);
+
         wallHeight = new int[maxLength];
         blockRefs = new GameObject[maxLength, maxHeight];
 
@@ -188,11 +192,11 @@ public class YugeWall : MonoBehaviour, CommandInterface
             int height = wallHeight[x];
             if (height <= 0)
             {
-                float v = (float)x / maxLength * Mathf.PI;
+                float v = (float)(x+randOffset) / maxLength * Mathf.PI * 2f;
                 // get wall height based on math function
                 wallHeight[x] = height = (int)Mathf.Clamp(maxHeight * (
-                        0.5f + 0.25f * (Mathf.Sin(v * .5f) + 0.5f * Mathf.Cos(v * .375f))
-                    ), 1f, maxHeight);
+                        .7f + 0.4f * (Mathf.Sin(v * 1.15f) + 0.2f * Mathf.Cos(v * 3.75f))
+                    ), 2f, maxHeight);
             }
 
             // get reference to base block
