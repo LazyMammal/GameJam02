@@ -35,7 +35,7 @@ public class LauncherActivity : MonoBehaviour {
         rotation *= Time.deltaTime;
         transform.Rotate(rotation, 0, 0);
     
-		if (activate_firing && Time.time > cooldown_finished) {
+		if ((Input.GetButton("Fire1") || activate_firing) && Time.time > cooldown_finished) {
 			cooldown_finished = Time.time + cooldown;
 			Fire ();
 		}
