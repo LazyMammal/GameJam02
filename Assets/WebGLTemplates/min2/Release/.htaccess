@@ -1,0 +1,43 @@
+<IfModule mod_rewrite.c>
+
+  <IfModule mod_mime.c>
+
+    Options +SymLinksIfOwnerMatch
+
+    RewriteEngine on
+
+    RewriteCond %{HTTP:Accept-encoding} br
+
+    RewriteCond %{REQUEST_FILENAME}br -f
+
+    RewriteRule ^(.*)\.(js|data|mem|unity3d)$ $1.$2br [L]
+
+    AddEncoding br .jsbr
+
+    AddEncoding br .databr
+
+    AddEncoding br .membr
+
+    AddEncoding br .unity3dbr
+
+    
+
+    RewriteCond %{HTTP:Accept-encoding} gzip
+
+    RewriteCond %{REQUEST_FILENAME}gz -f
+
+    RewriteRule ^(.*)\.(js|data|mem|unity3d)$ $1.$2gz [L]
+
+    AddEncoding gzip .jsgz
+
+    AddEncoding gzip .datagz
+
+    AddEncoding gzip .memgz
+
+    AddEncoding gzip .unity3dgz
+
+    
+
+  </IfModule>
+
+</IfModule>
